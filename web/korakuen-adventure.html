@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Momotarou Eco Adventure – Vườn Korakuen</title>
+  <link rel="stylesheet" href="../css/y.hakathon.css" />
+</head>
+<body>
+  <header>
+    <h1 id="title">Momotarou Eco Adventure – Vườn Korakuen</h1>
+  </header>
+
+  <div class="lang-switch">
+    <button onclick="setLang('vi')">🇻🇳 Tiếng Việt</button>
+    <button onclick="setLang('ja')">🇯🇵 日本語</button>
+    <button onclick="setLang('en')">🇬🇧 English</button>
+    <button onclick="setLang('zh')">🇨🇳 中文</button>
+    <button onclick="setLang('ko')">🇰🇷 한국어</button>
+    <button onclick="setLang('fr')">🇫🇷 Français</button>
+  </div>
+
+  <main class="content">
+    <section id="intro"></section>
+    <section id="activities" class="activities"></section>
+    <section id="mission" class="mission"></section>
+
+    <div class="image-box">
+        <img src="../img/h.jpg" alt="korakuen-adventure">
+        <img src="../img/hoianhsang2.jpg" alt="korakuen-adventure">
+        <img src="../img/cakorakuen.jpg" alt="korakuen-adventure">
+        <img src="../img/korakuen-lehoiden.jpg" alt="korakuen-adventure">
+        <img src="../img/korakuen-adventure5.jpg" alt="korakuen-adventure">
+        <img src="../img/korakuen-hoa.jpeg" alt="korakuen-adventure">
+      </div>
+
+    <div class="confirm-box">
+      <button class="mission-btn" id="missionBtn" onclick="confirmMission()">🌟 Hoàn thành nhiệm vụ & Nhận Stamp</button>
+      <p id="stampMessage" class="stamp-message"></p>
+      <div id="stampImage" style="margin-top:1rem;"></div>
+    </div>
+
+    <section id="closing" class="closing"></section>
+    <a href="okayamacastle-adventure.html" id="next_journey">Hành trình tiếp theo </a>
+  </main>
+
+  <footer class="footer">
+    © 2025 Momotarou Eco Adventure | Okayama Tourism
+  </footer>
+
+  <script>
+    let currentLang = 'vi';
+
+    const content = {
+      vi: {
+        title: "Cuộc Phiêu Lưu Sinh Thái Momotarou – Vườn Korakuen",
+        intro: `<h2>🌸 Khởi đầu hành trình tại Vườn Korakuen</h2>
+                <p>Chào mừng đến Vườn Korakuen, một trong Ba Đại Danh Viên của Nhật Bản! Đây là nơi bạn bắt đầu hành trình hóa thân thành Momotarou. Hãy dạo bước trong khu vườn thanh bình, cảm nhận vẻ đẹp bốn mùa và chuẩn bị cho một chuyến phiêu lưu sinh thái đầy ý nghĩa.</p>`,
+        activities: `<h2>🎌 Hoạt động tại Vườn Korakuen</h2>
+                     <ul>
+                       <li>Dạo quanh vườn và khám phá các trà thất ẩn mình.</li>
+                       <li>Hóa trang thành Momotarou hoặc các bạn đồng hành.</li>
+                       <li>Cho cá Koi ăn tại hồ nước trung tâm.</li>
+                       <li>Tham gia workshop tìm hiểu về các loài thực vật và bảo tồn cảnh quan.</li>
+                     </ul>`,
+        mission: `<strong>🌱 Nhiệm vụ:</strong> Chụp một bức ảnh thể hiện "sự hài hòa giữa con người và thiên nhiên" tại Vườn Korakuen. Đăng lên SNS với hashtag <code>#MomotarouEcoHero</code> và <code>#KorakuenHarmony</code>. Sau đó nhấn nút bên dưới để nhận stamp và mở khóa chặng tiếp theo!`,
+        buttonText: "🌟 Hoàn thành nhiệm vụ & Nhận Stamp",
+        stampMessage: "🎉 Bạn đã nhận được stamp Korakuen! Chặng tiếp theo tại Thành Okayama đã được mở khóa!",
+        stampSuccess: "🌟 Bạn đã trở thành người bảo vệ thiên nhiên!",
+        closing: `<h2>🏰 Hành trình tiếp theo đang chờ đợi!</h2>
+                  <p>Vườn Korakuen đã trao cho bạn sức mạnh của thiên nhiên. Giờ là lúc tiếp tục cuộc phiêu lưu tại Thành Okayama, nơi tinh thần dũng cảm của Momotarou đang chờ bạn khám phá.</p>
+                  <p>📸 Hãy tiếp tục chia sẻ hành trình của bạn với cộng đồng bằng hashtag <code>#MomotarouEcoHero</code>!</p>
+                  <p>🍑 Hãy để tinh thần của trái đào dẫn lối bạn đến với những thử thách mới!</p>`,
+        next_journey: "Hành trình tiếp theo"
+      },
+      ja: {
+        title: "桃太郎エコアドベンチャー – 後楽園",
+        intro: `<h2>🌸 後楽園から旅を始めよう</h2>
+                <p>日本三名園の一つ、後楽園へようこそ！ここが桃太郎になる冒険の始まりです。静かな庭園を散策し、四季の美しさを感じながら、意義深いエコアドベンチャーに備えましょう。</p>`,
+        activities: `<h2>🎌 後楽園での体験</h2>
+                     <ul>
+                       <li>園内を散策し、隠れた茶室を発見する。</li>
+                       <li>園内で桃太郎に関連するシンボルを探す。</li>
+                       <li>中央の池で鯉に餌をやる。</li>
+                       <li>植物や景観保全について学ぶワークショップに参加する。</li>
+                     </ul>`,
+        mission: `<strong>🌱 ミッション：</strong> 後楽園で「人と自然の調和」をテーマにした写真を撮影し、SNSにハッシュタグ <code>#MomotarouEcoHero</code> と <code>#KorakuenHarmony</code> を付けて投稿してください。完了後、下のボタンを押してスタンプをゲットし、次のステージへ！`,
+        buttonText: "🌟 ミッション完了 & スタンプを受け取る",
+        stampMessage: "🎉 後楽園のスタンプを獲得しました！次のステージ、岡山城が開放されました！",
+        stampSuccess: "🌟 あなたは自然の守護者になりました！",
+        closing: `<h2>🏰 次の冒険が待っている！</h2>
+                  <p>後楽園はあなたに自然の力を与えてくれました。次は桃太郎の勇敢な精神が待つ岡山城で冒険を続けましょう。</p>
+                  <p>📸 SNSで <code>#MomotarouEcoHero</code> を使って旅をシェアし続けよう！</p>
+                  <p>🍑 桃の精神があなたを新たな挑戦へと導きます！</p>`,
+        next_journey: "次の冒険へ"
+      },
+      en: {
+        title: "Momotarou Eco Adventure – Korakuen Garden",
+        intro: `<h2>🌸 Begin Your Journey at Korakuen Garden</h2>
+                <p>Welcome to Korakuen Garden, one of the Three Great Gardens of Japan! This is where you begin your quest as Momotarou. Stroll through the serene garden, feel the beauty of the four seasons, and prepare for a meaningful eco-adventure.</p>`,
+        activities: `<h2>🎌 Activities at Korakuen Garden</h2>
+                     <ul>
+                       <li>Wander the garden and discover hidden teahouses.</li>
+                       <li>Search for symbols related to Momotarou within the garden.</li>
+                       <li>Feed the koi fish at the central pond.</li>
+                       <li>Join workshops on local plants and landscape conservation.</li>
+                     </ul>`,
+        mission: `<strong>🌱 Mission:</strong> Take a photo that captures "harmony between people and nature" at Korakuen Garden. Post it on SNS with the hashtags <code>#MomotarouEcoHero</code> and <code>#KorakuenHarmony</code>. Then, press the button below to get your stamp and unlock the next stage!`,
+        buttonText: "🌟 Complete Mission & Get Stamp",
+        stampMessage: "🎉 You've received the Korakuen stamp! The next stage at Okayama Castle is now unlocked!",
+        stampSuccess: "🌟 You have become a guardian of nature!",
+        closing: `<h2>🏰 The Next Journey Awaits!</h2>
+                  <p>Korakuen Garden has granted you the power of nature. Now it's time to continue your adventure at Okayama Castle, where Momotarou's brave spirit awaits.</p>
+                  <p>📸 Keep sharing your journey with the community using the hashtag <code>#MomotarouEcoHero</code>!</p>
+                  <p>🍑 Let the spirit of the peach guide you to new challenges!</p>`,
+        next_journey: "Next Journey"
+      },
+      zh: {
+        title: "桃太郎生态冒险 – 后乐园",
+        intro: `<h2>🌸 从后乐园开始你的旅程</h2>
+                <p>欢迎来到日本三大名园之一的后乐园！这里是你化身桃太郎冒险的起点。漫步于宁静的庭园，感受四季之美，为一场有意义的生态冒险做好准备。</p>`,
+        activities: `<h2>🎌 在后乐园的活动</h2>
+                     <ul>
+                       <li>漫游庭园，发现隐藏的茶室。</li>
+                       <li>在园内寻找与桃太郎相关的标志。</li>
+                       <li>在中央池塘喂锦鲤。</li>
+                       <li>参加关于当地植物和景观保护的工作坊。</li>
+                     </ul>`,
+        mission: `<strong>🌱 任务：</strong> 在后乐园拍摄一张体现“人与自然和谐”的照片。发布到社交媒体并附上标签 <code>#MomotarouEcoHero</code> 和 <code>#KorakuenHarmony</code>。然后点击下方按钮获取您的印章并解锁下一阶段！`,
+        buttonText: "🌟 完成任务并领取印章",
+        stampMessage: "🎉 您已获得后乐园印章！下一阶段在冈山城已解锁！",
+        stampSuccess: "🌟 您已成为自然的守护者！",
+        closing: `<h2>🏰 下一段旅程在等待！</h2>
+                  <p>后乐园赋予了你自然的力量。现在是时候在冈山城继续你的冒险了，那里有桃太郎勇敢的精神在等着你。</p>
+                  <p>📸 继续使用 <code>#MomotarouEcoHero</code> 标签与社区分享您的旅程！</p>
+                  <p>🍑 让桃子的精神引导您迎接新的挑战！</p>`,
+        next_journey: "下一段旅程"
+      },
+      ko: {
+        title: "모모타로 생태 어드벤처 – 고라쿠엔",
+        intro: `<h2>🌸 고라쿠엔에서 여정을 시작하세요</h2>
+                <p>일본 3대 정원 중 하나인 고라쿠엔에 오신 것을 환영합니다! 이곳에서 모모타로가 되는 당신의 모험이 시작됩니다. 고요한 정원을 거닐며 사계절의 아름다움을 느끼고 의미 있는 생태 모험을 준비하세요.</p>`,
+        activities: `<h2>🎌 고라쿠엔에서의 활동</h2>
+                     <ul>
+                       <li>정원을 거닐며 숨겨진 찻집 발견하기.</li>
+                       <li>정원 안에서 모모타로와 관련된 상징 찾기.</li>
+                       <li>중앙 연못에서 잉어에게 먹이 주기.</li>
+                       <li>지역 식물과 경관 보존에 관한 워크숍 참여하기.</li>
+                     </ul>`,
+        mission: `<strong>🌱 미션:</strong> 고라쿠엔에서 "인간과 자연의 조화"를 담은 사진을 찍으세요. SNS에 <code>#MomotarouEcoHero</code>와 <code>#KorakuenHarmony</code> 해시태그와 함께 게시하세요. 그 다음, 아래 버튼을 눌러 스탬프를 받고 다음 단계를 잠금 해제하세요!`,
+        buttonText: "🌟 미션 완료 및 스탬프 받기",
+        stampMessage: "🎉 고라쿠엔 스탬프를 받았습니다! 오카야마 성의 다음 단계가 잠금 해제되었습니다!",
+        stampSuccess: "🌟 당신은 자연의 수호자가 되었습니다!",
+        closing: `<h2>🏰 다음 여정이 기다립니다!</h2>
+                  <p>고라쿠엔은 당신에게 자연의 힘을 부여했습니다. 이제 모모타로의 용감한 정신이 기다리는 오카야마 성에서 모험을 계속할 시간입니다.</p>
+                  <p>📸 <code>#MomotarouEcoHero</code> 해시태그를 사용하여 커뮤니티와 여정을 계속 공유하세요!</p>
+                  <p>🍑 복숭아의 정신이 새로운 도전으로 당신을 안내하게 하세요!</p>`,
+        next_journey: "다음 여정"
+      },
+      fr: {
+        title: "Aventure Écologique Momotarou – Jardin Korakuen",
+        intro: `<h2>🌸 Commencez votre aventure au Jardin Korakuen</h2>
+                <p>Bienvenue au Jardin Korakuen, l'un des Trois Grands Jardins du Japon ! C'est ici que vous commencez votre quête en tant que Momotarou. Promenez-vous dans le jardin serein, ressentez la beauté des quatre saisons et préparez-vous pour une éco-aventure pleine de sens.</p>`,
+        activities: `<h2>🎌 Activités au Jardin Korakuen</h2>
+                     <ul>
+                       <li>Flânez dans le jardin et découvrez des maisons de thé cachées.</li>
+                       <li>Cherchez des symboles liés à Momotarou dans le jardin.</li>
+                       <li>Nourrissez les carpes koï dans l'étang central.</li>
+                       <li>Participez à des ateliers sur les plantes locales et la conservation du paysage.</li>
+                     </ul>`,
+        mission: `<strong>🌱 Mission :</strong> Prenez une photo qui capture "l'harmonie entre l'homme et la nature" au Jardin Korakuen. Publiez-la sur les réseaux sociaux avec les hashtags <code>#MomotarouEcoHero</code> et <code>#KorakuenHarmony</code>. Appuyez ensuite sur le bouton ci-dessous pour obtenir votre tampon et débloquer la prochaine étape !`,
+        buttonText: "🌟 Terminer la mission & Obtenir le tampon",
+        stampMessage: "🎉 Vous avez reçu le tampon Korakuen ! La prochaine étape au Château d'Okayama est maintenant débloquée !",
+        stampSuccess: "🌟 Vous êtes devenu un gardien de la nature !",
+        closing: `<h2>🏰 Le Prochain Voyage Vous Attend !</h2>
+                  <p>Le Jardin Korakuen vous a accordé le pouvoir de la nature. Il est maintenant temps de poursuivre votre aventure au Château d'Okayama, où l'esprit courageux de Momotarou vous attend.</p>
+                  <p>📸 Continuez à partager votre voyage avec la communauté en utilisant le hashtag <code>#MomotarouEcoHero</code> !</p>
+                  <p>🍑 Laissez l'esprit de la pêche vous guider vers de nouveaux défis !</p>`,
+        next_journey: "Prochaine Aventure"
+      }
+    };
+
+    function setLang(lang) {
+      currentLang = lang;
+      document.getElementById("title").innerText = content[lang].title;
+      document.getElementById("intro").innerHTML = content[lang].intro;
+      document.getElementById("activities").innerHTML = content[lang].activities;
+      document.getElementById("mission").innerHTML = content[lang].mission;
+      document.getElementById("missionBtn").innerText = content[lang].buttonText;
+      document.getElementById("stampMessage").innerText = "";
+      document.getElementById("stampImage").innerHTML = "";
+      document.getElementById("closing").innerHTML = content[lang].closing;
+      document.getElementById("next_journey").innerText = content[lang].next_journey;
+    }
+
+    function confirmMission() {
+      document.getElementById("stampMessage").innerText = content[currentLang].stampMessage;
+      // Bạn có thể thay đổi ảnh stamp nếu muốn
+      document.getElementById("stampImage").innerHTML = `
+        <div style="position: relative; z-index: 10; pointer-events: none;">
+          <img src="../img/anh-momotaro.jpg" alt="stamp"
+              style="max-width:200px; max-height:200px; box-shadow:0 0 8px rgba(0,0,0,0.3); margin-top:0.5em;">
+          <p style="font-weight:bold; margin-top:0.5rem;">${content[currentLang].stampSuccess}</p>
+        </div>`;
+    }
+
+    // Tải trang với ngôn ngữ mặc định là tiếng Việt
+    setLang('vi');
+  </script>
+</body>
+</html>
+
+
+
+
+
+

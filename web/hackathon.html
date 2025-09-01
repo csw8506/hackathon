@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Momotarou Eco Adventure – Thành Okayama</title>
+  <link rel="stylesheet" href="../css/hackathonc.css" />
+</head>
+<body>
+  <header>
+    <h1 id="title">Momotarou Eco Adventure – Thành Okayama</h1>
+  </header>
+
+  <div class="lang-switch">
+    <button onclick="setLang('vi')">🇻🇳 Tiếng Việt</button>
+    <button onclick="setLang('ja')">🇯🇵 日本語</button>
+    <button onclick="setLang('en')">🇬🇧 English</button>
+    <button onclick="setLang('zh')">🇨🇳 中文</button>
+    <button onclick="setLang('ko')">🇰🇷 한국어</button>
+    <button onclick="setLang('fr')">🇫🇷 Français</button>
+  </div>
+
+  <main class="content">
+    <section id="intro"></section>
+    <section id="activities" class="activities"></section>
+    <section id="mission" class="mission"></section>
+
+    <div class="image-box">
+      <img src="https://www.ana.co.jp/japan-travel-planner/area/kyushu/okayama/0000005/img009.jpg" alt="Thành Okayama về đêm">
+      <img src="https://unogroup.jp/wp-content/uploads/2024/06/63.png" alt="Bên trong">
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2e/2f/48/7e/the-castle-tower-of-okayama.jpg?w=900&h=500&s=1" alt="Thành Okayama ban ngày">
+      <img src="https://okayama-castle.jp/wp/wp-content/themes/okayama-castle/assets/img/page/gather-park/main-img_pc.jpg" alt="Mặt trước thành Okayama">
+      <img src="https://resources.matcha-jp.com/resize/480x2000/2024/10/10-201902.webp" alt="Mặt trước thành Okayama">
+      <img src="https://d2mgzmtdeipcjp.cloudfront.net/files/good_contents/2024/04/30/17144520435410.jpg" alt="Mặt trước thành Okayama">
+    </div>
+
+    <div class="confirm-box">
+      <button class="mission-btn" id="missionBtn" onclick="confirmMission()">🌟 Hoàn thành nhiệm vụ & Nhận Stamp</button>
+      <p id="stampMessage" class="stamp-message"></p>
+      <div id="stampImage" style="margin-top:1rem;"></div>
+      
+    </div>
+
+    <section id="closing" class="closing"></section>
+  </main>
+
+  <footer class="footer">
+    © 2025 Momotarou Eco Adventure | Okayama Tourism
+  </footer>
+
+  <script>
+    let currentLang = 'vi';
+
+    const content = {
+      vi: {
+        title: "Cuộc Phiêu Lưu Sinh Thái Momotarou – Thành Okayama",
+        intro: `<h2>🏯 Khởi đầu hành trình tại Thành Okayama</h2>
+                <p>Thành Okayama – biểu tượng lịch sử và văn hóa – là nơi bạn bắt đầu hành trình hóa thân thành Momotarou. Hãy khám phá lâu đài đen kỳ bí, hóa trang thành nhân vật dân gian, và chuẩn bị cho chuyến phiêu lưu sinh thái đầy màu sắc.</p>`,
+        activities: `<h2>🎌 Hoạt động tại Thành Okayama</h2>
+                     <ul>
+                       <li>Tham quan lâu đài và tìm hiểu lịch sử địa phương.</li>
+                       <li>Hóa trang thành Momotarou hoặc các bạn đồng hành.</li>
+                       <li>Thưởng thức bánh dango và đặc sản Okayama.</li>
+                       <li>Tham gia workshop về văn hóa và du lịch sinh thái.</li>
+                     </ul>`,
+        mission: `<strong>🌱 Nhiệm vụ:</strong> Chụp ảnh hoặc quay video tại Thành Okayama, đăng lên SNS với hashtag <code>#MomotarouEcoHero</code> và <code>#OkayamaEcoHero</code>. Sau đó nhấn nút bên dưới để nhận stamp và mở khóa chặng tiếp theo!`,
+        buttonText: "🌟 Hoàn thành nhiệm vụ & Nhận Stamp",
+        stampMessage: "🎉 Bạn đã nhận được stamp Momotarou! Chặng tiếp theo đã được mở khóa!",
+        stampSuccess: "🌟 Bạn đã trở thành Eco Hero chính thức!",
+        closing: `<h2>🌟 Hành trình chỉ mới bắt đầu!</h2>
+                  <p>Thành Okayama không chỉ là điểm khởi đầu – mà là nơi bạn bước vào vai Momotarou, khám phá văn hóa, thiên nhiên và tinh thần sinh thái của vùng đất này.</p>
+                  <p>📸 Đừng quên chia sẻ khoảnh khắc của bạn với cộng đồng bằng hashtag <code>#MomotarouEcoHero</code> và <code>#OkayamaEcoHero</code> trên SNS!</p>
+                  <p>🍑 Hãy để tinh thần của trái đào dẫn lối bạn qua Okayama – vùng đất của truyền thuyết và hành động xanh.</p>`
+      },
+      ja: {
+        title: "桃太郎エコアドベンチャー – 岡山城",
+        intro: `<h2>🏯 岡山城から旅を始めよう</h2>
+                <p>岡山城は桃太郎の冒険の出発点。黒い城を探検し、桃太郎や仲間に変身して、文化と自然が融合した旅を楽しもう！</p>`,
+        activities: `<h2>🎌 岡山城での体験</h2>
+                     <ul>
+                       <li>城内を見学し、歴史を学ぶ。</li>
+                       <li>桃太郎や動物の衣装を着て写真撮影。</li>
+                       <li>団子や岡山の名物を味わう。</li>
+                       <li>文化・エコツーリズムのワークショップに参加。</li>
+                     </ul>`,
+        mission: `<strong>🌱 ミッション：</strong> 岡山城で撮影した写真や動画をSNSに投稿し、ハッシュタグ <code>#MomotarouEcoHero</code> と <code>#OkayamaEcoHero</code> を付けてください。完了後、下のボタンを押してスタンプをゲット！`,
+        buttonText: "🌟 ミッション完了 & スタンプを受け取る",
+        stampMessage: "🎉 スタンプを獲得しました！次のステージが開放されました！",
+        stampSuccess: "🌟 あなたは正式なエコヒーローになりました！",
+        closing: `<h2>🌟 冒険はまだ始まったばかり！</h2>
+                  <p>岡山城は旅の始まりにすぎません。桃太郎として文化と自然を探検し、エコヒーローとしての道を歩みましょう。</p>
+                  <p>📸 SNSで <code>#MomotarouEcoHero</code> と <code>#OkayamaEcoHero</code> を使って思い出を共有しよう！</p>
+                  <p>🍑 桃の精神があなたを岡山の伝説とエコアクションの世界へ導いてくれます。</p>`
+      },
+      en: {
+        title: "Momotarou Eco Adventure – Okayama Castle",
+        intro: `<h2>🏯 Begin Your Journey at Okayama Castle</h2>
+                <p>Okayama Castle marks the legendary start of your Momotarou adventure. Explore the black castle, dress up as folklore heroes, and dive into a journey of culture and eco-discovery.</p>`,
+        activities: `<h2>🎌 Activities at Okayama Castle</h2>
+                     <ul>
+                       <li>Tour the castle and learn about its history.</li>
+                       <li>Dress up as Momotarou or his companions.</li>
+                       <li>Taste dango and local Okayama specialties.</li>
+                       <li>Join workshops on culture and eco-tourism.</li>
+                     </ul>`,
+        mission: `<strong>🌱 Mission:</strong> Take a photo or video at Okayama Castle and post it on SNS with hashtags <code>#MomotarouEcoHero</code> and <code>#OkayamaEcoHero</code>. Then tap the button below to receive your stamp and unlock the next stage!`,
+        buttonText: "🌟 Complete Mission & Get Stamp",
+        stampMessage: "🎉 You’ve received the Momotarou stamp! The next stage is unlocked!",
+        stampSuccess: "🌟 You are now an official Eco Hero!",
+                closing: `<h2>🌟 Your adventure is just beginning!</h2>
+                  <p>Okayama Castle is more than a starting point — it’s where you become Momotarou, exploring culture, nature, and eco-heroism.</p>
+                  <p>📸 Don’t forget to share your moment with hashtags <code>#MomotarouEcoHero</code> and <code>#OkayamaEcoHero</code> on SNS!</p>
+                  <p>🍑 Let the spirit of the peach guide you through Okayama — the land of legends and green action.</p>`
+      },
+
+      zh: {
+        title: "桃太郎生态冒险 – 冈山城",
+        intro: `<h2>🏯 从冈山城开始你的旅程</h2>
+                <p>冈山城是桃太郎冒险的起点。探索黑色城堡，扮演民间英雄，开启文化与自然融合的生态之旅。</p>`,
+        activities: `<h2>🎌 冈山城的活动</h2>
+                     <ul>
+                       <li>参观城堡并了解历史。</li>
+                       <li>扮演桃太郎或他的伙伴。</li>
+                       <li>品尝团子和冈山特色美食。</li>
+                       <li>参加文化与生态旅游工作坊。</li>
+                     </ul>`,
+        mission: `<strong>🌱 任务：</strong> 在冈山城拍摄照片或视频，并在社交平台发布，使用标签 <code>#MomotarouEcoHero</code> 和 <code>#OkayamaEcoHero</code>。完成后点击下方按钮领取印章并解锁下一阶段！`,
+        buttonText: "🌟 完成任务并领取印章",
+        stampMessage: "🎉 你已获得桃太郎印章！下一阶段已解锁！",
+        stampSuccess: "🌟 你现在是正式的生态英雄！",
+        closing: `<h2>🌟 冒险才刚刚开始！</h2>
+                  <p>冈山城不仅是起点，更是你化身桃太郎、探索文化与自然的地方。</p>
+                  <p>📸 别忘了在社交平台使用 <code>#MomotarouEcoHero</code> 和 <code>#OkayamaEcoHero</code> 标签分享你的旅程！</p>
+                  <p>🍑 让桃子的精神引领你穿越冈山——一个充满传说与绿色行动的地方。</p>`
+      },
+
+      ko: {
+        title: "모모타로 생태 어드벤처 – 오카야마 성",
+        intro: `<h2>🏯 오카야마 성에서 여정을 시작하세요</h2>
+                <p>모모타로의 전설적인 모험은 오카야마 성에서 시작됩니다. 검은 성을 탐험하고 민속 영웅으로 변신하여 문화와 자연이 어우러진 생태 여행을 떠나보세요.</p>`,
+        activities: `<h2>🎌 오카야마 성에서의 활동</h2>
+                     <ul>
+                       <li>성 내부를 둘러보고 지역 역사 배우기</li>
+                       <li>모모타로나 동물 친구로 변신해 사진 촬영</li>
+                       <li>당고와 오카야마 특산물 맛보기</li>
+                       <li>문화 및 생태 관광 워크숍 참여</li>
+                     </ul>`,
+        mission: `<strong>🌱 에코 미션:</strong> 오카야마 성에서 사진이나 영상을 촬영하고 SNS에 <code>#MomotarouEcoHero</code>, <code>#OkayamaEcoHero</code> 해시태그와 함께 게시하세요. 완료 후 버튼을 눌러 스탬프를 받고 다음 단계로 이동하세요!`,
+        buttonText: "🌟 미션 완료 및 스탬프 받기",
+        stampMessage: "🎉 모모타로 스탬프를 받았습니다! 다음 단계가 열렸습니다!",
+        stampSuccess: "🌟 당신은 이제 공식 생태 히어로입니다!",
+        closing: `<h2>🌟 모험은 이제 시작입니다!</h2>
+                  <p>오카야마 성은 시작일 뿐입니다. 모모타로가 되어 문화와 자연을 탐험하고 에코 히어로로 거듭나세요.</p>
+                  <p>📸 SNS에 <code>#MomotarouEcoHero</code>, <code>#OkayamaEcoHero</code> 해시태그와 함께 순간을 공유하세요!</p>
+                  <p>🍑 복숭아의 정신이 전설과 친환경 행동의 땅 오카야마로 당신을 안내합니다.</p>`
+      },
+
+      fr: {
+        title: "Aventure Écologique Momotarou – Château d’Okayama",
+        intro: `<h2>🏯 Commencez votre aventure au château d’Okayama</h2>
+                <p>Le château d’Okayama est le point de départ légendaire de votre aventure Momotarou. Explorez le château noir, incarnez un héros folklorique et partez pour un voyage mêlant culture et écologie.</p>`,
+        activities: `<h2>🎌 Activités au château d’Okayama</h2>
+                     <ul>
+                       <li>Visite du château et découverte de son histoire</li>
+                       <li>Costume de Momotarou ou de ses compagnons</li>
+                       <li>Dégustation de dango et spécialités locales</li>
+                       <li>Ateliers sur la culture et l’écotourisme</li>
+                     </ul>`,
+        mission: `<strong>🌱 Mission :</strong> Prenez une photo ou une vidéo au château d’Okayama et publiez-la sur les réseaux sociaux avec les hashtags <code>#MomotarouEcoHero</code> et <code>#OkayamaEcoHero</code>. Cliquez ensuite sur le bouton ci-dessous pour recevoir votre tampon et débloquer l’étape suivante.`,
+        buttonText: "🌟 Terminer la mission & Recevoir le tampon",
+        stampMessage: "🎉 Vous avez reçu le tampon Momotarou ! L’étape suivante est débloquée !",
+        stampSuccess: "🌟 Vous êtes maintenant un Eco Hero officiel !",
+        closing: `<h2>🌟 L’aventure ne fait que commencer !</h2>
+                  <p>Le château d’Okayama est bien plus qu’un point de départ — c’est là que vous devenez Momotarou, explorant la culture, la nature et l’écologie.</p>
+                  <p>📸 N’oubliez pas de partager votre moment avec les hashtags <code>#MomotarouEcoHero</code> et <code>#OkayamaEcoHero</code> sur les réseaux sociaux !</p>
+                  <p>🍑 L’esprit de la pêche vous guidera à travers Okayama — terre de légendes et d’actions vertes.</p>`
+      }
+    };
+
+    function setLang(lang) {
+      currentLang = lang;
+      document.getElementById("title").innerText = content[lang].title;
+      document.getElementById("intro").innerHTML = content[lang].intro;
+      document.getElementById("activities").innerHTML = content[lang].activities;
+      document.getElementById("mission").innerHTML = content[lang].mission;
+      document.getElementById("missionBtn").innerText = content[lang].buttonText;
+      document.getElementById("stampMessage").innerText = "";
+      document.getElementById("stampImage").innerHTML = "";
+      document.getElementById("closing").innerHTML = content[lang].closing;
+    }
+
+    function confirmMission() {
+      document.getElementById("stampMessage").innerText = content[currentLang].stampMessage;
+      document.getElementById("stampImage").innerHTML = `
+        <div style="position: relative; z-index: 10; pointer-events: none;">
+          <img src="https://img2.lancers.jp/proposal/13267190/509/b5b7f20e44df1c1ba67e92b52a339e39855d3008451e1d8f3a45cbd3bea2f921/18798291_300_0.jpg?20190515090200" alt="stamp"
+              style="max-width:200px; max-height:200px; box-shadow:0 0 8px rgba(0,0,0,0.3); margin-top:0.5em;">
+          <p style="font-weight:bold; margin-top:0.5rem;">${content[currentLang].stampSuccess}</p>
+        </div>`;
+       
+
+    }
+
+    setLang('vi');
+  </script>
+</body>
+</html>
