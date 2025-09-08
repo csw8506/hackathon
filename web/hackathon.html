@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title id="pageTitle">桃太郎エコアドベンチャー – 岡山城</title>
-  <link rel="stylesheet" href="hackathonc.css" />
+  <link rel="stylesheet" href="../css/hackathonc.css" />
 </head>
 <body>
   <header>
@@ -185,11 +185,11 @@
       document.getElementById("closing").innerHTML = content[lang].closing;
     }
 
-    function confirmMission() {
+     function confirmMission() {
       document.getElementById("stampMessage").innerText = content[currentLang].stampMessage;
       document.getElementById("stampImage").innerHTML = `
         <div style="position: relative; z-index: 10; pointer-events: none;">
-        
+          <img src="https://img2.lancers.jp/proposal/13267190/509/b5b7f20e44df1c1ba67e92b52a339e39855d3008451e1d8f3a45cbd3bea2f921/18798291_300_0.jpg?20190515090200" alt="stamp"
               style="max-width:200px; max-height:200px; box-shadow:0 0 8px rgba(0,0,0,0.3); margin-top:0.5em;">
           <p style="font-weight:bold; margin-top:0.5rem;">${content[currentLang].stampSuccess}</p>
         </div>`;
