@@ -50,7 +50,7 @@ body {
 /* --- Banner chính --- */
 .hero-banner {
     height: 60vh;
-    background: url('hakkathon3.jpg') no-repeat center center/cover;
+    background: url("../img/hakkathon3.jpg") no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
