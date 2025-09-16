@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="ja">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Momotarou Eco Adventure – Vườn Korakuen</title>
+  <title>Momotarou Eco Adventure – 後楽園</title>
   <link rel="stylesheet" href="../css/y.hakathon.css" />
 </head>
 <body>
   <header>
-    <h1 id="title">Momotarou Eco Adventure – Vườn Korakuen</h1>
+    <h1 id="title">桃太郎エコアドベンチャー – 後楽園</h1>
   </header>
 
   <div class="lang-switch">
@@ -35,13 +35,13 @@
       </div>
 
     <div class="confirm-box">
-      <button class="mission-btn" id="missionBtn" onclick="confirmMission()">🌟 Hoàn thành nhiệm vụ & Nhận Stamp</button>
+      <button class="mission-btn" id="missionBtn" onclick="confirmMission()">🌟 ミッション完了＆スタンプを受け取る</button>
       <p id="stampMessage" class="stamp-message"></p>
       <div id="stampImage" style="margin-top:1rem;"></div>
     </div>
 
     <section id="closing" class="closing"></section>
-    <a href="okayamacastle-adventure.html" id="next_journey">Hành trình tiếp theo </a>
+    <a href="okayamacastle-adventure.html" id="next_journey">次の冒険</a>
   </main>
 
   <footer class="footer">
@@ -49,7 +49,7 @@
   </footer>
 
   <script>
-    let currentLang = 'vi';
+    let currentLang = 'ja';
 
     const content = {
       vi: {
@@ -198,20 +198,14 @@
       // Bạn có thể thay đổi ảnh stamp nếu muốn
       document.getElementById("stampImage").innerHTML = `
         <div style="position: relative; z-index: 10; pointer-events: none;">
-          <img src="../img/anh-momotaro.jpg" alt="stamp"
+          <img src="anh-momotaro.jpg" alt="stamp"
               style="max-width:200px; max-height:200px; box-shadow:0 0 8px rgba(0,0,0,0.3); margin-top:0.5em;">
           <p style="font-weight:bold; margin-top:0.5rem;">${content[currentLang].stampSuccess}</p>
         </div>`;
     }
 
-    // Tải trang với ngôn ngữ mặc định là tiếng Việt
-    setLang('vi');
+    // Tải trang với ngôn ngữ mặc định là tieng viet
+    setLang('ja');
   </script>
 </body>
 </html>
-
-
-
-
-
-
