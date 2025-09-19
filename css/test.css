@@ -69,6 +69,7 @@ body {
   font-size: 1.2rem;
 }
 section { padding: 20px 0; }
+<<<<<<< HEAD
 
 /* Kurashiki CSS*/
 .custom-row {
@@ -102,3 +103,71 @@ section { padding: 20px 0; }
   border-bottom: 2px solid rgb(14, 231, 213);
   padding: 10px;
 }
+=======
+/* --- About Section --- */
+#about {
+  background: #f9faf8;        /* やや明るい背景 */
+  padding: 60px 20px;         /* セクション内余白 */
+  border-radius: 12px;        /* 角を少し丸く */
+  max-width: 1100px;           /* 読みやすい幅に制限 */
+  margin: 40px auto;          /* 中央寄せ */
+  line-height: 1.8;           /* 行間広め */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* 見出し */
+#about .section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #2e7d32;             /* 自然をイメージしたグリーン */
+  margin-bottom: 30px;
+  position: relative;
+}
+
+#about .section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #81c784;        /* 薄いグリーンの下線 */
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+/* 段落共通 */
+#about p {
+  font-size: 1.05rem;
+  color: #333;
+  margin-bottom: 24px;
+}
+
+/* 箇条書きのような行を見やすく */
+#about p br + .bullet,
+#about p br + span {
+  display: block;
+  margin-top: 8px;
+}
+
+/* 2段目の特徴部分を軽くカード調に */
+#about p:nth-of-type(2) {
+  background: #e8f5e9;
+  border-left: 4px solid #81c784;
+  padding: 16px 20px;
+  border-radius: 6px;
+}
+
+/* 岡山のエコツーリズム 部分 
+#about p:nth-of-type(3) {
+  background: #e8f5e9;
+  border-left: 4px solid #66bb6a;
+  padding: 16px 20px;
+  border-radius: 6px;
+} */
+
+/* リスト風に番号を強調 */
+#about p:nth-of-type(3) br + * {
+  display: block;
+  margin-top: 8px;
+}
+>>>>>>> 8b8bc89fcf283b3654febdbd5d63f44852c55073
