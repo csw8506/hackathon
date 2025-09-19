@@ -16,7 +16,7 @@ body {
 }
 .hero {
     position: relative;
-    background: url("../img/bikan_img/Okayama-Castle.jpg") no-repeat center center;
+    background: url("../img/bikan_img/sub_bikan_pc.jpg") no-repeat center center;
 
     background-size: cover;
     height: 500px;
