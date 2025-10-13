@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Momotarou Eco Adventure – Thành Okayama</title>
+  <title id="pageTitle">桃太郎エコアドベンチャー - 岡山城</title>
   <link rel="stylesheet" href="../css/y.hakathon.css" />
 </head>
 <body>
   <header>
-    <h1 id="title">Momotarou Eco Adventure – Thành Okayama</h1>
+    <h1 id="title">桃太郎エコアドベンチャー – 岡山城</h1>
   </header>
 
   <div class="lang-switch">
@@ -37,17 +37,17 @@
     </div>
 
     <div class="confirm-box">
-      <button class="mission-btn" id="missionBtn" onclick="confirmMission()">🌟 Hoàn thành nhiệm vụ & Nhận Stamp</button>
+      <button class="mission-btn" id="missionBtn" onclick="confirmMission()">🌟 ミッション完了 & スタンプを受け取る</button>
       <p id="stampMessage" class="stamp-message"></p>
       <div id="stampImage" style="margin-top:1rem;"></div>
     </div>
 
     <section id="closing" class="closing"></section>
-    <a href="new.hakkathon.html" id="complete_journey">Hoàn thành cuộc phiêu lưu</a>
+    <a href="new.hakkathon.html" id="complete_journey">冒険を終了する</a>
   </main>
 
   <footer class="footer">
-    © 2025 Momotarou Eco Adventure | Okayama Tourism
+    © 2025 桃太郎エコアドベンチャー | 岡山観光
   </footer>
  <script>
     let currentLang = 'vi';
@@ -204,8 +204,7 @@
         </div>`;
     }
 
-    // Tải trang với ngôn ngữ mặc định là tiếng Việt
-    setLang('vi');
+    setLang('ja');
   </script>
 </body>
 </html>
