@@ -1,0 +1,212 @@
+/* ====== 全体共通 ====== */
+body {
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  background-color: #f5f8f2;
+  color: #333;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-weight: bold;
+}
+
+p {
+  margin: 0 0 1rem 0;
+}
+
+/* ====== ヘッダー ====== */
+header {
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1.2rem;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+nav a {
+  margin-left: 1.2rem;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+  color: #8bc34a;
+}
+
+/* ====== ヒーローセクション ====== */
+.hero {
+  background-image: url("hero.jpg"); /* 画像を差し替えてください */
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: white;
+  padding: 6rem 1rem;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero a {
+  display: inline-block;
+  background-color: #8bc34a;
+  color: white;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 999px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.hero a:hover {
+  background-color: #6fa62d;
+}
+
+/* ====== 桃太郎セクション ====== */
+.momotaro-section {
+  max-width: 1000px;
+  margin: 3rem auto;
+  background-color: #e6f0dc;
+  padding: 2rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  border-radius: 12px;
+}
+
+.momotaro-section img {
+  max-width: 250px;
+  height: auto;
+}
+
+.momotaro-text h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.3rem;
+}
+
+.momotaro-text p {
+  font-size: 0.95rem;
+}
+
+/* ====== エコツーリズム説明セクション ====== */
+.eco-section {
+  background-image: url("eco-bg.jpg"); /* 差し替え */
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: white;
+  padding: 4rem 1rem;
+  line-height: 1.8;
+}
+
+.eco-section p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* ====== 観光地カード ====== */
+.tourism-section {
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 1rem;
+}
+
+.tourism-section h2 {
+  text-align: center;
+  margin-bottom: 0.3rem;
+}
+
+.tourism-section p {
+  text-align: center;
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  width: 200px;
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card h3 {
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
+}
+
+.card p {
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+  color: #666;
+}
+
+/* ====== フッター ====== */
+footer {
+  text-align: center;
+  font-size: 0.8rem;
+  padding: 1.5rem;
+  color: #555;
+  background-color: #f0f0f0;
+  margin-top: 2rem;
+}
