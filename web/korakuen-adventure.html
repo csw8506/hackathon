@@ -35,13 +35,13 @@
       </div>
 
     <div class="confirm-box">
-      <button class="mission-btn" id="missionBtn" onclick="confirmMission()">🌟 ミッション完了＆スタンプを受け取る</button>
+      <button class="mission-btn" id="missionBtn" onclick="confirmMission()">🌟 ミッション完了 & スタンプを受け取る</button>
       <p id="stampMessage" class="stamp-message"></p>
       <div id="stampImage" style="margin-top:1rem;"></div>
     </div>
 
     <section id="closing" class="closing"></section>
-    <a href="okayamacastle-adventure.html" id="next_journey">次の冒険</a>
+    <a href="../index.html" id="complete_journey">冒険を終了する</a>
   </main>
 
   <footer class="footer">
@@ -86,7 +86,7 @@
                      </ul>`,
         mission: `<strong>🌱 ミッション：</strong> 後楽園で「人と自然の調和」をテーマにした写真を撮影し、SNSにハッシュタグ <code>#MomotarouEcoHero</code> と <code>#KorakuenHarmony</code> を付けて投稿してください。完了後、下のボタンを押してスタンプをゲットし、次のステージへ！`,
         buttonText: "🌟 ミッション完了 & スタンプを受け取る",
-        stampMessage: "🎉 後楽園のスタンプを獲得しました！次のステージ、岡山城が開放されました！",
+        stampMessage: "🎉 後楽園のスタンプを獲得しました！次のステージ、次が開放されました！",
         stampSuccess: "🌟 あなたは自然の守護者になりました！",
         closing: `<h2>🏰 次の冒険が待っている！</h2>
                   <p>後楽園はあなたに自然の力を与えてくれました。次は桃太郎の勇敢な精神が待つ岡山城で冒険を続けましょう。</p>
@@ -195,10 +195,9 @@
 
     function confirmMission() {
       document.getElementById("stampMessage").innerText = content[currentLang].stampMessage;
-      // Bạn có thể thay đổi ảnh stamp nếu muốn
       document.getElementById("stampImage").innerHTML = `
         <div style="position: relative; z-index: 10; pointer-events: none;">
-          <img src="anh-momotaro.jpg" alt="stamp"
+          <img src="https://img2.lancers.jp/proposal/13267190/509/b5b7f20e44df1c1ba67e92b52a339e39855d3008451e1d8f3a45cbd3bea2f921/18798291_300_0.jpg?20190515090200" alt="stamp"
               style="max-width:200px; max-height:200px; box-shadow:0 0 8px rgba(0,0,0,0.3); margin-top:0.5em;">
           <p style="font-weight:bold; margin-top:0.5rem;">${content[currentLang].stampSuccess}</p>
         </div>`;
