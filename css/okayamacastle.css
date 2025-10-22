@@ -1,180 +1,229 @@
-
+/*================================================================
+  基本設定 (Base Styles)
+================================================================*/
 body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #f8f9fa;
-  margin: 0;
-  padding: 0;
-  color: #333;
-  line-height: 1.6;
+    font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9; /* 背景をわずかにグレーにして、コンテンツを引き立てる */
 }
 
-/* Navbar */
-.navbar {
-  background-color: #2e7d32;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-.navbar-brand {
-  font-weight: bold;
-  font-size: 1.6rem;
-  color: #fff;
+/* リンクの装飾 */
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-/* Hero Section */
-.hero {
-  position: relative;
-  background: url("../img/okayamacastle_home1.webp") no-repeat center center / cover;
-  height: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
-}
-.hero h1, .hero p {
-  position: relative;
-  z-index: 2;
-  color: #fff;
-}
-.hero h1 {
-  font-size: 3.2rem;
-  font-weight: bold;
-}
-.hero p {
-  font-size: 1.5rem;
+/*-----------------------------------
+  レスポンシブ画像設定
+-----------------------------------*/
+/* すべてのコンテンツ画像をコンテナに合わせてレスポンシブにする */
+.layout img {
+    max-width: 100%;
+    height: auto; /* アスペクト比を維持 */
+    display: block; /* 余分なスペースを削除 */
+    border-radius: 8px; /* 角を丸くする */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影をつけて立体感を出す */
+    margin-bottom: 20px;
 }
 
-/* Section Title */
-.section-title {
-  margin: 60px 0 30px;
-  text-align: center;
-  font-weight: 700;
-  font-size: 2rem;
-  color: #2e7d32;
-}
-
-/* Card Image Styling */
-.card img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-.card img:hover {
-  transform: scale(1.02);
-}
-
-/* Footer */
-.footer {
-  background-color: #2e7d32;
-  color: #fff;
-  text-align: center;
-  padding: 20px 10px;
-  font-size: 0.95rem;
-}
-.footer a {
-  color: #fff;
-  margin: 0 12px;
-  font-size: 1.2rem;
-  text-decoration: none;
-}
-.footer a:hover {
-  text-decoration: underline;
-}
-
-/* Section Padding */
-section {
-  padding: 40px 0;
-}
-
-/* Kurashiki */
-.custom-row {
-  margin-bottom: 24px;
-}
-.td_design {
-  background-color: #388e3c;
-  color: white;
-  text-align: center;
-  padding: 10px;
-  border: none;
-  width: 90px;
-  border-radius: 12px;
-  font-weight: bold;
-}
-.text {
-  text-align: justify;
-  font-size: 1.05rem;
-}
-.eyes {
-  text-align: center;
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-.bikan_map {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  object-fit: cover;
-}
-.map_title {
-  text-align: center;
-  font-weight: bold;
-  margin-bottom: 30px;
-  border-top: 2px solid #0ee7d5;
-  border-bottom: 2px solid #0ee7d5;
-  padding: 12px;
-  font-size: 1.3rem;
-}
-
-/* About Section */
-#about {
-  background: #f9faf8;
-  padding: 60px 20px;
-  border-radius: 12px;
-  max-width: 1100px;
-  margin: 40px auto;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-}
-#about .section-title {
-  font-size: 2.2rem;
-  font-weight: bold;
-  color: #2e7d32;
-  margin-bottom: 30px;
-  position: relative;
-}
-#about .section-title::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: #81c784;
-  margin: 12px auto 0;
-  border-radius: 2px;
-}
-#about p {
-  font-size: 1.05rem;
-  color: #333;
-  margin-bottom: 24px;
-}
-#about p:nth-of-type(2) {
-  background: #e8f5e9;
-  border-left: 4px solid #81c784;
-  padding: 16px 20px;
-  border-radius: 6px;
-}
-
-/* Sticky Header */
+/*================================================================
+  ナビゲーション (Navbar)
+================================================================*/
 .sticky-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background-color: #2e7d32;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    background-color: #000; /* 烏城の黒をイメージ */
+    border-bottom: 3px solid #ffd700; /* 金の鯱（しゃちほこ）をイメージしたゴールドのライン */
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #fff !important;
+}
+
+.nav-links a {
+    color: #ddd;
+    padding: 0 15px;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffd700; /* ホバーでゴールドに */
+}
+
+/* Bootstrapのトグルボタンの色を調整 */
+.navbar-toggler {
+    border-color: #ffd700;
+}
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba%28255, 215, 0, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/*================================================================
+  ヒーローセクション (Hero Section)
+================================================================*/
+.hero {
+    /* HTMLのimgタグではなく、CSSの背景画像として設定 */
+    /* HTML内のimgタグは紹介セクションに移動されているため、ここでは背景画像を想定 */
+    background-image: url('https://www.japan-guide.com/g21/5702_01.jpg'); 
+    background-size: cover; /* 画像をフレームに合わせて調整 */
+    background-position: center;
+    height: 60vh; /* ビューポートの高さの60% */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+/* 背景を暗くするためのオーバーレイ */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* 黒いオーバーレイ */
+    z-index: 1;
+}
+
+.hero > div {
+    z-index: 2;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 3px #000000;
+}
+
+/*================================================================
+  メインコンテンツとレイアウト (Main Content & Layout)
+================================================================*/
+.layout {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.main-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+section {
+    padding: 30px 0;
+    border-bottom: 1px dashed #ccc;
+}
+
+section:last-child {
+    border-bottom: none;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: #a0522d; /* 城の歴史を感じさせるアースカラー */
+    border-bottom: 3px solid #ffeb3b; /* 強調線 */
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+h3 {
+    font-size: 1.8rem;
+    color: #000;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    border-left: 5px solid #a0522d;
+    padding-left: 10px;
+}
+
+p {
+    margin-bottom: 20px;
+    text-align: justify; /* テキストを均等に配置 */
+}
+
+/*================================================================
+  見どころセクション (Spots Section)
+================================================================*/
+/* 画像を横に並べるためのFlexboxレイアウト */
+.event1, .event2 {
+    display: flex;
+    flex-direction: column; /* スマートフォンでは縦並び */
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+/* 画像コンテナ内のimgタグに個別のスタイルを設定 */
+.event1 img, .event2 img {
+    /* 天守閣の2枚の画像を調整 */
+    width: 100%; /* Flexアイテム内で幅いっぱいに */
+    object-fit: cover; /* 縦横比を維持しつつ、コンテナを埋める */
+}
+
+/*-----------------------------------
+  デスクトップ向け (Large Screens)
+-----------------------------------*/
+@media (min-width: 768px) {
+    /* 見どころセクションを左右に分ける */
+    .event1, .event2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* 2つの列を作成 */
+        align-items: start;
+    }
+
+    /* 天守閣の画像 (event1) をグリッド内に配置 */
+    .event1 > h3, .event1 > p {
+        grid-column: 1 / 3; /* タイトルと段落は2列分使用 */
+    }
+
+    .event1 img:nth-of-type(1) { /* 1枚目の画像 */
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+    .event1 img:nth-of-type(2) { /* 2枚目の画像 */
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+    }
+
+    /* 廊下門の画像 (event2) */
+    .event2 img {
+        grid-column: 1 / 3; /* 1枚しかないため、2列分を使用 */
+    }
+
+    /* テキストと画像を交互に配置したい場合は、grid-template-columns と grid-area を調整 */
+}
+
+/*================================================================
+  モバイル向け調整 (Mobile Adjustments)
+================================================================*/
+@media (max-width: 576px) {
+    .hero {
+        height: 40vh; /* モバイルでは高さを少し抑える */
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
 }
