@@ -99,7 +99,7 @@ body {
 
 .main-content {
     flex: 3; /* Chiếm 3/4 không gian */
-    padding-left: 30px;
+    padding: auto;
 }
 
 .sidebar {
