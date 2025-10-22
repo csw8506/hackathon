@@ -160,3 +160,10 @@ section { padding: 20px 0; }
   display: block;
   margin-top: 8px;
 }
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #2e7d32;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
