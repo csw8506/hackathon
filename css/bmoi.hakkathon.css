@@ -35,7 +35,7 @@ body {
 }
 
 .nav-links a {
-    color: white;
+    color: rgba(255, 255, 255, 0.468);
     text-decoration: none;
     margin-left: 20px;
     padding: 5px 10px;
