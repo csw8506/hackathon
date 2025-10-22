@@ -2,39 +2,36 @@
 /* CSS 基本設定 (Cài đặt CSS cơ bản) */
 /* ==================================== */
 body {
-    /* フォント設定: 可読性と美しさを考慮し、日本の標準フォントを採用 */
     font-family: 'Hiragino Kaku Gothic Pro', 'Meiryo', sans-serif;
-    line-height: 1.7; /* 行間を広げ、読みやすさを向上 */
+    line-height: 1.7;
     margin: 0;
     padding: 0;
-    color: #333333; /* 標準的な黒に近い色 */
-    background-color: #f7f7f7; /* 背景をより柔らかいライトグレーに設定 */
-    scroll-behavior: smooth; /* スムーズスクロールを有効化 */
+    color: #333333; 
+    background-color: #f7f7f7; 
+    scroll-behavior: smooth; 
 }
 
 a {
     text-decoration: none;
-    color: inherit; /* リンクの色を親要素から継承 */
+    color: inherit;
 }
 
 .container {
     width: 90%;
     max-width: 1200px;
-    margin: 0 auto; /* 中央揃え */
+    margin: 0 auto; 
     padding: 0; 
 }
 
 /* ==================================== */
-/* ヘッダー (背景画像を適用) */
+/* ヘッダー (Header) - 調整済み */
 /* テーマ: 烏城（うじょう）の黒と金 (Black and Gold of Ujo Castle) */
 /* ==================================== */
 header{
-    /* HTMLのimgタグではなく、CSSの背景画像として設定 */
-    /* HTML内のimgタグは紹介セクションに移動されているため、ここでは背景画像を想定 */
     background-image: url('https://www.japan-guide.com/g21/5702_01.jpg'); 
-    background-size: cover; /* 画像をフレームに合わせて調整 */
+    background-size: cover; 
     background-position: center;
-    height: 60vh; /* ビューポートの高さの60% */
+    height: 60vh; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -46,13 +43,14 @@ header{
 /* 背景を暗くするためのオーバーレイ */
 header::before {
    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.4); /* 黒いオーバーレイ */
-    z-index: 1;
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   /* 調整: オーバーレイの透明度を下げ、背景画像を明るくする (0.4 -> 0.3) */
+   background-color: rgba(0, 0, 0, 0.3); 
+   z-index: 1;
 }
 
 .hero > div {
@@ -62,78 +60,80 @@ header::before {
 
 header h1, header h2, .catch-copy {
     position: relative;
-    z-index: 2; /* オーバーレイの上に表示 */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.548); /* 文字に影をつけ、視認性を確保 */
+    z-index: 2; 
 }
 
 header h1 {
-    font-size: 4.2em; /* 非常に大きく */
+    font-size: 4.2em; 
     margin-bottom: 8px;
     letter-spacing: 6px;
-    color:white; /* black*/
-    /* 輝くようなテキストシャドウ */
-    text-shadow: 0 0 15px rgba(255, 215, 0, 0.7), 0 0 5px rgba(0, 0, 0, 1); 
-    font-weight: 900; /* 極太 */
+    color:white; 
+    /* 調整: テキストシャドウをより金色で輝くように変更し、視認性を高める */
+    text-shadow: 0 0 10px #FFD700, 0 0 5px rgba(0, 0, 0, 0.8); 
+    font-weight: 900;
 }
 
 header h2 {
     font-size: 1.9em;
-    font-weight: 300;
+    font-weight: 400; /* 太さを少し上げて、視認性を向上 */
     margin-top: 0;
-    color: #e0e0e0;
+    /* 調整: 白に近い色にし、オーバーレイとの対比を明確にする */
+    color: #ffffff; 
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* 軽い影で読みやすく */
 }
 
 .catch-copy {
     font-size: 3em;
     margin-top: 25px;
-    color: #bbbbbb;
-    /* 境界線も金色で統一 */
-    border-bottom: 2px solid black
-    ; 
+    /* 調整: ゴールド色に変更してテーマを統一 */
+    color: white
+; 
+    /* 調整: 境界線もゴールドで統一 */
+    border-bottom: 3px solid #FFD700; 
     display: inline-block;
     padding-bottom: 8px;
     font-style: italic;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); 
 }
 
 /* ==================================== */
-/* ナビゲーションバー (Navbar) */
+/* ナビゲーションバー (Navbar) - 調整済み */
 /* ==================================== */
 .navbar {
-    background-color: #111; /* ヘッダーの背景色に合わせて統一感UP */
+    /* 調整: 黒 (#111) から濃いチャコールグレーに変更し、重さを軽減 */
+    background-color: #36454F; /* Dark Slate Gray/Charcoal */
     padding: 0; 
     margin-bottom: 40px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    /* 調整: box-shadow を控えめにして、重々しさを軽減 */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 .navbar .container {
     display: flex; 
-    /* 左端に揃えるために justify-content: flex-start を使う */
     justify-content: flex-start; 
     align-items: center;
-    padding: 18px 0; /* 上下のパディングを設定 */
-    
-    /* コンテナの幅を設定し、コンテンツを中央に保つ（containerの共通設定）*/
-    width: 90%; 
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 18px 0;
+    /* 修正: .container の設定が二重になっているため、以下の重複部分を削除 */
+    /* width: 90%; 
+       max-width: 1200px;
+       margin: 0 auto; */
 }
 
 .navbar a {
     color: #fff;
     text-decoration: none;
-    /* 項目間のマージンを右側だけに設定して項目を離す */
     margin-right: 30px; 
-    padding: 10px 0; /* リンクのパディングは調整 */
+    padding: 10px 0; 
     font-weight: bold;
     font-size: 1.05em;
-    transition: color 0.3s; /* ホバーで色だけ変える */
+    transition: color 0.3s;
 }
 
 .navbar a:hover {
-    color: #ffd700; /* ホバーで金色に */
-    background-color: transparent; /* 背景色は変えない */
+    /* ホバーで金色に */
+    color: #ffd700; 
+    background-color: transparent; 
 }
-
 /* ==================================== */
 /* セクションとコンテンツ */
 /* ==================================== */
