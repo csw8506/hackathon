@@ -91,17 +91,6 @@ section { padding: 20px 0; }
   font-size: 20px;
   font-weight: bold;
 }
-.bikan_map {
-  width: 100%;
-}
-.map_title {
-  text-align: center;
-  font-weight: bold;
-  margin-bottom: 30px;
-  border-top: 2px solid rgb(14, 231, 213);
-  border-bottom: 2px solid rgb(14, 231, 213);
-  padding: 10px;
-}
 /* --- About Section --- */
 #about {
   background: #f9faf8;

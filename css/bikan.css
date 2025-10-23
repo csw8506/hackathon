@@ -31,3 +31,14 @@
 .header p {
   font-size: 1.5rem;
 }
+.bikan_map {
+  width: 100%;
+}
+.map_title {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 30px;
+  border-top: 2px solid rgb(14, 231, 213);
+  border-bottom: 2px solid rgb(14, 231, 213);
+  padding: 10px;
+}
