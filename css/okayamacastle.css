@@ -179,7 +179,7 @@ header h2 {
 }
 
 .navbar .home-logo:hover {
-    color: #ffc107; /* ホバー時に黄色に */
+    color: hsl(0, 0%, 100%); /* ホバー時に黄色に */
 }
 
 
@@ -205,7 +205,7 @@ header h2 {
 }
 
 .navbar .nav-links a:hover {
-    color: #ffc107; /* ホバー時に黄色に */
+    color: #fff; /* ホバー時に黄色に */
     background-color: transparent; 
 }
 
@@ -328,9 +328,8 @@ section h4 {
 footer {
     text-align: center;
     padding: 30px 0;
-    background-color: #1a1a1a; 
+    background-color: #2e7d32; 
     color: #b0b0b0;
     margin-top: 60px;
     font-size: 0.95em;
-    border-top: 3px solid #FFD700; 
 }
