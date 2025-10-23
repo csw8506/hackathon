@@ -1,14 +1,19 @@
 /* ==================================== */
-/* CSS 基本設定 (CSS Kihon Settei - Cài đặt CSS cơ bản) */
+/* CSS 基本設定 (CSS Kihon Settei - 基本設定) */
 /* ==================================== */
 body {
+    /* Navbar固定化に伴い、コンテンツが隠れないよう上部に余白を追加 (Navbar固定に伴う調整) */
+    padding-top: 80px; 
+    
     /* フォント設定: 日本語と欧文フォントの指定 */
     font-family: 'Hiragino Kaku Gothic Pro', 'Meiryo', sans-serif;
     /* 行の高さ */
     line-height: 1.7;
     /* 余白をリセット */
     margin: 0;
-    padding: 0;
+    padding-left: 0; 
+    padding-right: 0;
+    padding-bottom: 0;
     /* 基本の文字色 */
     color: #333333; 
     /* 背景色 (ごく薄いグレー) */
@@ -37,14 +42,14 @@ a {
 
 /* ==================================== */
 /* ヘッダー (Header) */
-/* テーマ: 烏城（うじょう）の黒と金 (Ujo - Crow Castle のテーマ) */
-/* ==================================== */
 /* ==================================== */
 header{
     background-image: url('https://www.japan-guide.com/g21/5702_01.jpg'); 
     background-size: cover; 
     background-position: center;
-    height: 60vh; 
+    /* navbarの高さ分を考慮して調整 */
+    height: calc(60vh - 80px); 
+    min-height: 300px; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -61,13 +66,11 @@ header::before {
    left: 0;
    right: 0;
    bottom: 0;
-   /* 調整: オーバーレイの透明度を下げ、背景画像を明るくする (0.4 -> 0.3) */
    background-color: rgba(0, 0, 0, 0.3); 
    z-index: 1;
 }
 
 .hero > div {
-    /* テキストをオーバーレイより前に配置 */
     z-index: 2;
     padding: 20px;
 }
@@ -79,18 +82,15 @@ header h1, header h2, .catch-copy {
 }
 
 header h1 {
-    /* フォントサイズ: 岡山城のタイトル */
     font-size: 4.2em; 
     margin-bottom: 8px;
     letter-spacing: 6px;
     color:white; 
-    /* 金色のテキストシャドウで荘厳さを表現 */
     text-shadow: 0 0 10px #FFD700, 0 0 5px rgba(0, 0, 0, 0.8); 
     font-weight: 900;
 }
 
 header h2 {
-    /* サブタイトル */
     font-size: 1.9em;
     font-weight: 400; 
     margin-top: 0;
@@ -99,11 +99,9 @@ header h2 {
 }
 
 .catch-copy {
-    /* キャッチコピー */
     font-size: 3em;
     margin-top: 25px;
     color: white; 
-    /* 黄金色の下線 */
     border-bottom: 3px solid #FFD700; 
     display: inline-block;
     padding-bottom: 8px;
@@ -132,7 +130,6 @@ header h2 {
     font-size: 0.9em;
 }
 .lang-switcher button:hover, .lang-switcher .active {
-    /* ホバー時とアクティブ時に濃いチャコールグレーに */
     background-color: #36454F;
     color: white;
     border-color: #36454F;
@@ -141,37 +138,74 @@ header h2 {
 
 /* ==================================== */
 /* ナビゲーションバー (Navbar) */
+/* 変更点: 上部固定、背景色を緑に変更 */
 /* ==================================== */
 .navbar {
-    /* 背景色: 濃いチャコールグレー */
-    background-color: #36454F; 
+    /* Vị trí cố định, toàn chiều rộng, màu xanh lá cây */
+    position: fixed; 
+    top: 0; 
+    right: 0; 
+    left: 0; 
+    z-index: 1000; 
+    /* 背景色を緑に変更 */
+    background-color: #28a745; 
     padding: 0; 
-    margin-bottom: 40px;
-    /* 控えめな影 */
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    margin-bottom: 0; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .navbar .container {
-    /* ナビゲーション項目を左寄せで横並びにする */
+    /* 変更点: ロゴ(左)とナビゲーションリンク(右)を両端に配置 */
     display: flex; 
-    justify-content: flex-start; 
+    justify-content: space-between; /* 両端揃え */
     align-items: center;
-    padding: 18px 0;
+    padding: 15px 0; 
 }
 
-.navbar a {
-    color: #fff;
+/* ------------------------------------ */
+/* CSS for ロゴ/ホームページリンク (左側) */
+/* ------------------------------------ */
+.navbar .home-logo {
+    color: white; 
+    font-size: 1.5em; /* 目立つサイズ */
+    font-weight: 900; /* 強調 */
     text-decoration: none;
-    margin-right: 30px; 
+    /* containerの左端に合わせる */
+    padding: 0; 
+    margin: 0;
+    transition: color 0.3s;
+    /* ロゴの視認性向上のためのシャドウ */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); 
+}
+
+.navbar .home-logo:hover {
+    color: #ffc107; /* ホバー時に黄色に */
+}
+
+
+/* ------------------------------------ */
+/* CSS for ナビゲーションリンク (右側) */
+/* ------------------------------------ */
+.navbar .nav-links {
+    /* リンクを横並びにする */
+    display: flex; 
+    align-items: center;
+}
+
+.navbar .nav-links a {
+    color: #fff; 
+    text-decoration: none;
+    /* 右寄せのため、リンク間のマージンを左側で設定 */
+    margin-right: 0; 
+    margin-left: 30px; 
     padding: 10px 0; 
     font-weight: bold;
     font-size: 1.05em;
     transition: color 0.3s;
 }
 
-.navbar a:hover {
-    /* ホバー時に金色に変更 */
-    color: #ffd700; 
+.navbar .nav-links a:hover {
+    color: #ffc107; /* ホバー時に黄色に */
     background-color: transparent; 
 }
 
@@ -180,20 +214,15 @@ header h2 {
 /* ==================================== */
 section {
     background-color: #ffffff;
-    /* セクションの内部パディング */
     padding: 60px 80px; 
     margin-bottom: 50px;
-    /* 角丸 */
     border-radius: 12px; 
-    /* 繊細な影 */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); 
 }
 
 section h3 {
-    /* セクションのメインタイトル */
     font-size: 2.6em;
     color: #1a1a1a;
-    /* 黄金色の太い左ボーダーで装飾 */
     border-left: 10px solid #FFD700; 
     padding-left: 20px;
     margin-bottom: 35px;
@@ -201,12 +230,10 @@ section h3 {
 }
 
 section h4 {
-    /* サブタイトル (見どころなどの小見出し) */
     font-size: 1.8em;
     color: #333333;
     margin-top: 40px;
     margin-bottom: 15px;
-    /* 細い下線 */
     border-bottom: 1px solid #e0e0e0;
     padding-bottom: 10px;
     font-weight: 600;
@@ -216,9 +243,7 @@ section h4 {
 /* 画像ギャラリー (Image Gallery) */
 /* ==================================== */
 .image-gallery {
-    /* Flexboxで画像を横並びに */
     display: flex;
-    /* 要素間の隙間 */
     gap: 30px; 
     margin-bottom: 40px;
     flex-wrap: wrap; 
@@ -226,19 +251,16 @@ section h4 {
 }
 
 .castle-img {
-    /* 3列レイアウト (柔軟な幅計算) */
     flex: 1 1 calc(33.33% - 20px); 
     min-width: 250px; 
     height: 250px; 
     object-fit: cover;
     border-radius: 15px; 
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); 
-    /* アニメーション設定 */
     transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s; 
     filter: brightness(1.05) saturate(1.1); 
     cursor: pointer;
     
-    /* プレースホルダーのデフォルトスタイル (画像未設定時) */
     background-color: #eeeeee; 
     border: 4px dashed #cccccc; 
     display: flex;
@@ -253,17 +275,12 @@ section h4 {
     box-sizing: border-box;
 }
 
-/* ギャラリー画像の個別指定 (アップロードされた画像を使用) */
-#img-towers { background-image: url('image_25d148.png'); background-size: cover; border: none;}
-#img-gate { background-image: url('image_25d180.png'); background-size: cover; border: none;}
-#img-lightup { background-image: url('image_25d200.png'); background-size: cover; border: none;}
-/* 画像が設定されたらテキストプレースホルダーを非表示 */
-#img-towers, #img-gate, #img-lightup { font-size: 0; } 
+#img-towers { background-image: url('image_25d148.png'); background-size: cover; border: none; font-size: 0;}
+#img-gate { background-image: url('image_25d180.png'); background-size: cover; border: none; font-size: 0;}
+#img-lightup { background-image: url('image_25d200.png'); background-size: cover; border: none; font-size: 0;}
 
 
-/* ホバーエフェクト (マウスオーバー時の効果) */
 .castle-img:hover {
-    /* 少し上に移動し、拡大 */
     transform: translateY(-8px) scale(1.03); 
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
@@ -273,9 +290,7 @@ section h4 {
 /* ==================================== */
 .info-table {
     width: 100%;
-    /* ボーダーを分離 */
     border-collapse: separate; 
-    /* 行間のスペース */
     border-spacing: 0 12px; 
     margin-top: 30px;
     font-size: 1.05em;
@@ -288,12 +303,10 @@ section h4 {
 }
 
 .info-table th {
-    /* ラベル部分の背景色: 薄い金色 */
     background-color: #fffde7; 
     width: 35%;
     font-weight: 700;
     color: #1a1a1a;
-    /* 左側の角を丸く */
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
     border: 1px solid #ffecb3; 
@@ -302,9 +315,7 @@ section h4 {
 
 .info-table td {
     background-color: #ffffff;
-    /* 影で立体感を出す */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); 
-    /* 右側の角を丸く */
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
     border: 1px solid #f0f0f0;
@@ -317,11 +328,9 @@ section h4 {
 footer {
     text-align: center;
     padding: 30px 0;
-    /* 落ち着いた黒の背景 */
     background-color: #1a1a1a; 
     color: #b0b0b0;
     margin-top: 60px;
     font-size: 0.95em;
-    /* 上部に黄金色のライン */
     border-top: 3px solid #FFD700; 
 }
