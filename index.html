@@ -21,7 +21,7 @@
 <body>
   
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark sticky-header">
+  <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
       <a class="navbar-brand" href="index.html"> 岡山エコツーリズム</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -44,37 +44,45 @@
       <p>倉敷美観地区・後楽園・岡山城の魅力を発見</p>
     </div>
   </section>
-  
+  <div class="layout">
     <!-- エコツーリズムとは Section -->
-  <section id="about" >
-    <h2 class="section-title">エコツーリズムとは</h2>
-    <!-- 1. 紹介 -->
-  <p>
-    エコツーリズムは、自然と地域文化に基づき、環境教育と結びつき、
-    保全への取り組みや持続可能な発展に貢献し、地域住民の積極的な参加を伴う観光形態です。
-    比較的手つかずの自然地域において、自然や過去と現在の文化的価値を鑑賞することを目的とし、
-    環境に対して責任ある観光の形態です。保全活動を促進し、環境への悪影響を最小限に抑え、
-    地域社会に経済的・社会的に良い影響を与えることを目指します。
-  </p>
+    <section id="about" >
+      <h2 class="section-title">エコツーリズムとは</h2>
+      <!-- 1. 紹介 -->
+      <p>
+        エコツーリズムは、自然と地域文化に基づき、環境教育と結びつき、
+        保全への取り組みや持続可能な発展に貢献し、地域住民の積極的な参加を伴う観光形態です。
+        比較的手つかずの自然地域において、自然や過去と現在の文化的価値を鑑賞することを目的とし、
+        環境に対して責任ある観光の形態です。保全活動を促進し、環境への悪影響を最小限に抑え、
+        地域社会に経済的・社会的に良い影響を与えることを目指します。
+      </p>
 
-    <!-- 2. 特徴 -->
-  <p>
-    エコツーリズムには、いくつかの特徴的な分野があります
-    <br>・保養・レジャー観光
-    <br>・森林や湖の生態系研究観光
-    <br>・登山や水上スポーツなどのスポーツ観光
-    <br>・文化・歴史観光
-  </p>
+        <!-- 2. 特徴 -->
+      <p>
+        エコツーリズムには、いくつかの特徴的な分野があります
+        <br>・保養・レジャー観光
+        <br>・森林や湖の生態系研究観光
+        <br>・登山や水上スポーツなどのスポーツ観光
+        <br>・文化・歴史観光
+      </p>
 
-  <!-- 3. 岡山について 
-  <p>
-    🍇 岡山のエコツーリズム
-    <br>1. 後楽園：有名な伝統庭園。茶室あり、四季折々の風景。自然と結びついた文化祭を開催。
-    <br>2. 倉敷美観地区：運河沿いの歴史的な街並み。舟遊び、工芸体験。江戸時代の建築を保存。
-    <br>3. 牛窓オリーブ園：海沿いのオリーブの丘。環境に優しい農業と地中海風景。展望台、収穫祭あり。
-    <br>4. 岡山市：温暖で日照が多い気候。桃太郎伝説と関連。農業・文化観光を推進中。
-  </p>-->
-  </section>
+      <!-- 3. 岡山について 
+      <p>
+        🍇 岡山のエコツーリズム
+        <br>1. 後楽園：有名な伝統庭園。茶室あり、四季折々の風景。自然と結びついた文化祭を開催。
+        <br>2. 倉敷美観地区：運河沿いの歴史的な街並み。舟遊び、工芸体験。江戸時代の建築を保存。
+        <br>3. 牛窓オリーブ園：海沿いのオリーブの丘。環境に優しい農業と地中海風景。展望台、収穫祭あり。
+        <br>4. 岡山市：温暖で日照が多い気候。桃太郎伝説と関連。農業・文化観光を推進中。
+      </p>-->
+    </section>
+    <aside class="sidebar">
+    <img src="./img/momotaro2.jpg" alt="momotaro">
+    <p data-key="sidebar_p">岡山は、温暖な気候、美しいビーチ、そして一年中の日差しで有名です。また、日本の伝説の英雄である桃太郎の故郷でもあり、彼は文化の象徴であり、地元の人々の誇りです。岡山でユニークなエコツーリズム体験、桃太郎の旅を探検して、素晴らしい驚きを見つけましょう。</p>
+    <a href="./web/korakuen-adventure.html" class="korakuen adventure" data-key="sidebar_link1">後楽園での旅</a>
+    <a href="./web/hackathon.html" class="okayamacastle adventure" data-key="sidebar_link2">岡山城での旅</a>
+    <a href="./web/kurashiki_stamp.html" class="#KurashikiBikanSpirit adventure" data-key="sidebar_link2">倉敷美観地区での旅</a>
+  </aside>
+  </div>
   
   <!-- 観光スポット Section -->
   <section id="spots" class="container">
@@ -103,7 +111,7 @@
       <div class="col-md-4">
         <div class="card">
           <!--<img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2e/2f/48/7e/the-castle-tower-of-okayama.jpg?w=900&h=500&s=1" class="card-img-top" alt="岡山城">-->
-          <a href="./web/okayamacastle.html"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2e/2f/48/7e/the-castle-tower-of-okayama.jpg?w=900&h=500&s=1" class="card-img-top" alt="岡山城"></a>
+          <a href="./web/hackathon.html"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2e/2f/48/7e/the-castle-tower-of-okayama.jpg?w=900&h=500&s=1" class="card-img-top" alt="岡山城"></a>
           <div class="card-body">
             <h5 class="card-title">岡山城</h5>
             <p class="card-text">「烏城（うじょう）」の愛称で親しまれる黒い外観が特徴の岡山城。</p>
@@ -146,6 +154,7 @@
         <p><i class="fas fa-envelope"></i> info@okayama-eco.jp</p>
       </div>-->
 
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
@@ -155,6 +164,7 @@
   
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./js/kouraku.js"></script>
   <script src="test.js"></script>
 </body>
 </html>
