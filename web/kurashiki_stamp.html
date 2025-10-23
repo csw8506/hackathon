@@ -1,213 +1,211 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>岡山エコツーリズム | 自然と歴史を楽しむ旅</title>
-  <link rel="stylesheet" href="../css/y.hakathon.css" />
-</head>
-<body>
-  <header>
-    <h1 id="title">桃太郎エコアドベンチャー –  倉敷美観地区</h1>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>岡山エコツーリズム | 自然と歴史を楽しむ旅</title>
+    <link rel="stylesheet" href="../css/y.hakathon.css" />
+  </head>
 
-  <div class="lang-switch">
-    <button onclick="setLang('vi')">🇻🇳 Tiếng Việt</button>
-    <button onclick="setLang('ja')">🇯🇵 日本語</button>
-    <button onclick="setLang('en')">🇬🇧 English</button>
-    <button onclick="setLang('zh')">🇨🇳 中文</button>
-    <button onclick="setLang('ko')">🇰🇷 한국어</button>
-    <button onclick="setLang('fr')">🇫🇷 Français</button>
-  </div>
+  <body>
+    <header>
+      <h1 id="title">桃太郎エコアドベンチャー -  倉敷美観地区</h1>
+    </header>
 
-  <main class="content">
-    <section id="intro"></section>
-    <section id="activities" class="activities"></section>
-    <section id="mission" class="mission"></section>
-
-    <div class="confirm-box">
-      <button class="mission-btn" id="missionBtn" onclick="confirmMission()">🌟 ミッション完了＆スタンプを受け取る</button>
-      <p id="stampMessage" class="stamp-message"></p>
-      <div id="stampImage" style="margin-top:1rem;"></div>
+    <div class="lang-switch">
+      <button onclick="setLang('vi')">🇻🇳 Tiếng Việt</button>
+      <button onclick="setLang('ja')">🇯🇵 日本語</button>
+      <button onclick="setLang('en')">🇬🇧 English</button>
+      <button onclick="setLang('zh')">🇨🇳 中文</button>
+      <button onclick="setLang('ko')">🇰🇷 한국어</button>
+      <button onclick="setLang('fr')">🇫🇷 Français</button>
     </div>
 
-    <section id="closing" class="closing"></section>
-    <a href="../index.html" id="complete_journey">冒険を終了する</a>
-  </main>
+    <main class="content">
+      <section id="intro"></section>
+      <section id="activities" class="activities"></section>
+      <section id="mission" class="mission"></section>
+      <div class="confirm-box">
+        <button class="mission-btn" id="missionBtn" onclick="confirmMission()">🌟 ミッション完了＆スタンプを受け取る</button>
+        <p id="stampMessage" class="stamp-message"></p>
+        <div id="stampImage" style="margin-top:1rem;"></div>
+      </div>
+      <section id="closing" class="closing"></section>
+      <a href="../index.html" id="complete_journey">冒険を終了する</a>
+    </main>
 
-  <footer class="footer">
-    © 2025 Momotarou Eco Adventure | Okayama Tourism
-  </footer>
- <script>
-    let currentLang = 'ja';
+    <footer class="footer">
+      © 2025 Momotarou Eco Adventure | Okayama Tourism
+    </footer>
+ 
+    <script>
+      let currentLang = 'ja';
+      const content = {
+        vi: {
+          title: "Cuộc Phiêu Lưu Sinh Thái Momotaro - Khu Phố Cổ Kurashiki Bikan",
+          intro: `<h2>Khu Phố Cổ Kurashiki Bikan</h2>
+                  <p>Tuyệt vời! Hãy cảm nhận vẻ đẹp của khu phố cổ Kurashiki Bikan và thể hiện lòng dũng cảm của Momotaro.
+                    Khám phá những con phố truyền thống và kênh đào xinh đẹp, xem bạn có thể trở thành một anh hùng sinh thái thực thụ hay không.</p>`,
+          activities: `<h2>🎌 Trải nghiệm tại Khu Phố Cổ Kurashiki Bikan:</h2>
+                      <ul>
+                        <li>Tản bộ qua những con phố tường trắng truyền thống.</li>
+                        <li>Đi xe kéo để tìm hiểu về văn hóa của thị trấn và tầm quan trọng của thiên nhiên.</li>
+                        <li>Thưởng thức các món bánh kẹo địa phương trong khi ngắm nhìn con kênh tuyệt đẹp.</li>
+                      </ul>`,
+          mission: `<strong>🌱 Nhiệm vụ Cuối Cùng:</strong> Tại khu phố cổ Kurashiki Bikan, hãy chụp ảnh hoặc quay video thể hiện “trái tim dũng cảm” của bạn.
+                    Đăng lên mạng xã hội với các hashtag <code>#MomotarouEcoHero</code> và <code>#KurashikiBikanSpirit</code>,
+                    sau đó nhấn nút bên dưới để nhận con dấu cuối cùng!`,
+          buttonText: "🌟 Hoàn Thành Nhiệm Vụ & Nhận Con Dấu Cuối Cùng",
+          stampMessage: "🎉 Chúc mừng! Bạn đã nhận được con dấu cuối cùng từ Khu Phố Cổ Kurashiki Bikan!",
+          stampSuccess: "🌟 Bạn chính thức trở thành Anh Hùng Sinh Thái Momotaro!",
+          closing: `<h2>🏆 Hành trình của bạn đã hoàn thành!</h2>
+                    <p>Bạn đã hoàn thành cuộc phiêu lưu anh hùng sinh thái và đến được khu phố cổ Kurashiki Bikan tuyệt đẹp, nơi có thiên nhiên và lịch sử hòa quyện.</p>
+                    <p>📸 Hãy tiếp tục lan tỏa thông điệp bảo vệ môi trường bằng cách sử dụng hashtag <code>#MomotarouEcoHero</code>!</p>
+                    <p>🍑 Tinh thần của quả đào sẽ luôn ở bên bạn. Cảm ơn bạn đã tham gia cuộc phiêu lưu tại Okayama — vùng đất của huyền thoại và hành động xanh.</p>`,
+          complete_journey: "Hoàn Thành Cuộc Phiêu Lưu"
+        },
+        ja: {
+          title: "桃太郎エコアドベンチャー - 倉敷美観地区",
+          intro: `<h2>倉敷美観地区</h2>
+                  <p>素晴らしい！倉敷美観地区の魅力を感じながら、桃太郎の勇気を発揮しましょう。
+                      伝統的な街並みや美しい運河を探検して、本当のエコヒーローになれるか試してみてください。</p>`,
+          activities: `<h2>🎌 倉敷美観地区の体験</h2>
+                      <ul>
+                        <li>伝統的な白壁の街をさんぽしましょう。</li>
+                        <li>人力車にのって、町の文化や自然の大切さを学びましょう。</li>
+                        <li>きれいな運河を見ながら、地元のお菓子を楽しみましょう。</li>
+                      </ul>`,
+          mission: `<strong>🌱 最終ミッション：</strong> 倉敷美観地区で「勇気のこころ」を表す写真や動画を撮りましょう。
+                      SNSに <code>#MomotarouEcoHero</code> と <code>#KurashikiBikanSpirit</code> のハッシュタグをつけて投稿し、
+                      下のボタンをクリックして最後のスタンプをゲット！`,
+          buttonText: "🌟 ミッション完了 & 最後のスタンプを受け取る",
+          stampMessage: "🎉 おめでとうございます！倉敷美観地区からスタンプを受け取りました！",
+          stampSuccess: "🌟 あなたは正式に桃太郎エコヒーローになりました！",
+          closing: `<h2>🏆 あなたの旅は完了しました！</h2>
+                    <p>エコヒーローとしての冒険を終え、美しい自然と歴史がある倉敷美観地区にたどり着きました</p>
+                    <p>📸 ハッシュタグ <code>#MomotarouEcoHero</code> を使って、環境保護のメッセージを広め続けてください！</p>
+                    <p>🍑 桃の精神は常にあなたと共にあります。伝説とグリーンアクションの地、岡山の冒険にご参加いただき、ありがとうございました。</p>`,
+          complete_journey: "冒険を完了する"
+        },
+        en: {
+          title: "Momotaro Eco Adventure - Kurashiki Bikan Historical Quarter",
+          intro: `<h2>Kurashiki Bikan District</h2>
+                  <p>Wonderful! Feel the charm of Kurashiki Bikan District while showing Momotaro's courage.
+                    Explore the traditional streets and beautiful canals, and see if you can become a true eco-hero.</p>`,
+          activities: `<h2>🎌 Experiences in the Kurashiki Bikan District:</h2>
+                      <ul>
+                        <li>Take a stroll through the traditional white-walled streets.</li>
+                        <li>Ride a rickshaw to learn about the town's culture and the importance of nature.</li>
+                        <li>Enjoy local sweets while admiring the beautiful canal.</li>
+                      </ul>`,
+          mission: `<strong>🌱 Final Mission:</strong> In Kurashiki Bikan District, take photos or videos that show your "heart of courage."
+                    Post them on social media with the hashtags <code>#MomotarouEcoHero</code> and <code>#KurashikiBikanSpirit</code>,
+                    then click the button below to get your final stamp!`,
+          buttonText: "🌟 Mission Complete & Receive the Final Stamp",
+          stampMessage: "🎉 Congratulations! You have received the stamp from Kurashiki Bikan Historical Quarter!",
+          stampSuccess: "🌟 You are officially a Momotaro Eco Hero!",
+          closing: `<h2>🏆 Your journey is complete!</h2>
+                    <p>You have completed your eco-hero adventure and arrived at the beautiful Kurashiki Bikan District, a place of nature and history.</p>
+                    <p>📸 Keep spreading your environmental message using the hashtag <code>#MomotarouEcoHero</code>!</p>
+                    <p>🍑 The spirit of the peach is always with you. Thank you for joining the adventure in Okayama—the land of legends and green action.</p>`,
+          complete_journey: "Complete the Adventure"
+        },
 
-    const content = {
-      vi: {
-        title: "Cuộc Phiêu Lưu Sinh Thái Momotaro – Khu Phố Cổ Kurashiki Bikan",
-        intro: `<h2>Khu Phố Cổ Kurashiki Bikan</h2>
-                <p>Tuyệt vời! Hãy cảm nhận vẻ đẹp của khu phố cổ Kurashiki Bikan và thể hiện lòng dũng cảm của Momotaro.
-                  Khám phá những con phố truyền thống và kênh đào xinh đẹp, xem bạn có thể trở thành một anh hùng sinh thái thực thụ hay không.</p>`,
-        activities: `<h2>🎌 Trải nghiệm tại Khu Phố Cổ Kurashiki Bikan:</h2>
-                    <ul>
-                      <li>Tản bộ qua những con phố tường trắng truyền thống.</li>
-                      <li>Đi xe kéo để tìm hiểu về văn hóa của thị trấn và tầm quan trọng của thiên nhiên.</li>
-                      <li>Thưởng thức các món bánh kẹo địa phương trong khi ngắm nhìn con kênh tuyệt đẹp.</li>
-                    </ul>`,
-        mission: `<strong>🌱 Nhiệm vụ Cuối Cùng:</strong> Tại khu phố cổ Kurashiki Bikan, hãy chụp ảnh hoặc quay video thể hiện “trái tim dũng cảm” của bạn.
-                  Đăng lên mạng xã hội với các hashtag <code>#MomotarouEcoHero</code> và <code>#KurashikiBikanSpirit</code>,
-                  sau đó nhấn nút bên dưới để nhận con dấu cuối cùng!`,
-        buttonText: "🌟 Hoàn Thành Nhiệm Vụ & Nhận Con Dấu Cuối Cùng",
-        stampMessage: "🎉 Chúc mừng! Bạn đã nhận được con dấu cuối cùng từ Khu Phố Cổ Kurashiki Bikan!",
-        stampSuccess: "🌟 Bạn chính thức trở thành Anh Hùng Sinh Thái Momotaro!",
-        closing: `<h2>🏆 Hành trình của bạn đã hoàn thành!</h2>
-                  <p>Bạn đã hoàn thành cuộc phiêu lưu anh hùng sinh thái và đến được khu phố cổ Kurashiki Bikan tuyệt đẹp, nơi có thiên nhiên và lịch sử hòa quyện.</p>
-                  <p>📸 Hãy tiếp tục lan tỏa thông điệp bảo vệ môi trường bằng cách sử dụng hashtag <code>#MomotarouEcoHero</code>!</p>
-                  <p>🍑 Tinh thần của quả đào sẽ luôn ở bên bạn. Cảm ơn bạn đã tham gia cuộc phiêu lưu tại Okayama — vùng đất của huyền thoại và hành động xanh.</p>`,
-        complete_journey: "Hoàn Thành Cuộc Phiêu Lưu"
-      },
-      ja: {
-        title: "桃太郎エコアドベンチャー – 倉敷美観地区",
-        intro: `<h2>倉敷美観地区</h2>
-                <p>素晴らしい！倉敷美観地区の魅力を感じながら、桃太郎の勇気を発揮しましょう。
-                    伝統的な街並みや美しい運河を探検して、本当のエコヒーローになれるか試してみてください。</p>`,
-        activities: `<h2>🎌 倉敷美観地区の体験</h2>
-                     <ul>
-                       <li>伝統的な白壁の街をさんぽしましょう。</li>
-                       <li>人力車にのって、町の文化や自然の大切さを学びましょう。</li>
-                       <li>きれいな運河を見ながら、地元のお菓子を楽しみましょう。</li>
-                     </ul>`,
-        mission: `<strong>🌱 最終ミッション：</strong> 倉敷美観地区で「勇気のこころ」を表す写真や動画を撮りましょう。
-                    SNSに <code>#MomotarouEcoHero</code> と <code>#KurashikiBikanSpirit</code> のハッシュタグをつけて投稿し、
-                    下のボタンをクリックして最後のスタンプをゲット！`,
-        buttonText: "🌟 ミッション完了 & 最後のスタンプを受け取る",
-        stampMessage: "🎉 おめでとうございます！倉敷美観地区からスタンプを受け取りました！",
-        stampSuccess: "🌟 あなたは正式に桃太郎エコヒーローになりました！",
-        closing: `<h2>🏆 あなたの旅は完了しました！</h2>
-                  <p>エコヒーローとしての冒険を終え、美しい自然と歴史がある倉敷美観地区にたどり着きました</p>
-                  <p>📸 ハッシュタグ <code>#MomotarouEcoHero</code> を使って、環境保護のメッセージを広め続けてください！</p>
-                  <p>🍑 桃の精神は常にあなたと共にあります。伝説とグリーンアクションの地、岡山の冒険にご参加いただき、ありがとうございました。</p>`,
-        complete_journey: "冒険を完了する"
-      },
-      en: {
-        title: "Momotaro Eco Adventure – Kurashiki Bikan Historical Quarter",
-        intro: `<h2>Kurashiki Bikan District</h2>
-                <p>Wonderful! Feel the charm of Kurashiki Bikan District while showing Momotaro's courage.
-                  Explore the traditional streets and beautiful canals, and see if you can become a true eco-hero.</p>`,
-        activities: `<h2>🎌 Experiences in the Kurashiki Bikan District:</h2>
-                    <ul>
-                      <li>Take a stroll through the traditional white-walled streets.</li>
-                      <li>Ride a rickshaw to learn about the town's culture and the importance of nature.</li>
-                      <li>Enjoy local sweets while admiring the beautiful canal.</li>
-                    </ul>`,
-        mission: `<strong>🌱 Final Mission:</strong> In Kurashiki Bikan District, take photos or videos that show your "heart of courage."
-                  Post them on social media with the hashtags <code>#MomotarouEcoHero</code> and <code>#KurashikiBikanSpirit</code>,
-                  then click the button below to get your final stamp!`,
-        buttonText: "🌟 Mission Complete & Receive the Final Stamp",
-        stampMessage: "🎉 Congratulations! You have received the stamp from Kurashiki Bikan Historical Quarter!",
-        stampSuccess: "🌟 You are officially a Momotaro Eco Hero!",
-        closing: `<h2>🏆 Your journey is complete!</h2>
-                  <p>You have completed your eco-hero adventure and arrived at the beautiful Kurashiki Bikan District, a place of nature and history.</p>
-                  <p>📸 Keep spreading your environmental message using the hashtag <code>#MomotarouEcoHero</code>!</p>
-                  <p>🍑 The spirit of the peach is always with you. Thank you for joining the adventure in Okayama—the land of legends and green action.</p>`,
-        complete_journey: "Complete the Adventure"
-      },
+        zh: {
+          title: "桃太郎生态冒险 - 仓敷美观地区",
+          intro: `<h2>仓敷美观地区</h2>
+                  <p>太棒了！感受仓敷美观地区的魅力，展现桃太郎的勇气。
+                    探索传统街道和美丽的运河，看看你是否能成为真正的生态英雄。</p>`,
+          activities: `<h2>🎌 仓敷美观地区的体验：</h2>
+                      <ul>
+                        <li>漫步在传统的白墙街道上。</li>
+                        <li>乘坐人力车，了解小镇的文化与自然的重要性。</li>
+                        <li>一边欣赏美丽的运河，一边品尝当地的点心。</li>
+                      </ul>`,
+          mission: `<strong>🌱 最终任务：</strong> 在仓敷美观地区拍摄能展现你“勇气之心”的照片或视频。
+                    在社交媒体上发布并添加标签 <code>#MomotarouEcoHero</code> 和 <code>#KurashikiBikanSpirit</code>,
+                    然后点击下方按钮领取最后的印章！`,
+          buttonText: "🌟 任务完成 & 领取最后的印章",
+          stampMessage: "🎉 恭喜！你已从仓敷美观地区获得最后的印章！",
+          stampSuccess: "🌟 你已正式成为桃太郎生态英雄！",
+          closing: `<h2>🏆 你的冒险已经完成！</h2>
+                    <p>你完成了生态英雄的冒险，来到了拥有美丽自然与历史的仓敷美观地区。</p>
+                    <p>📸 继续使用标签 <code>#MomotarouEcoHero</code> 来传播环保的信息吧！</p>
+                    <p>🍑 桃子的精神将永远与你同在。感谢你参与冈山——这片传奇与绿色行动之地的冒险。</p>`,
+          complete_journey: "完成冒险"
+        },
+        ko: {
+          title: "모모타로 에코 어드벤처 - 쿠라시키 비칸 지구",
+          intro: `<h2>쿠라시키 비칸 지구</h2>
+                  <p>멋져요! 쿠라시키 비칸 지구의 매력을 느끼며 모모타로의 용기를 보여주세요.
+                    전통적인 거리와 아름다운 운하를 탐험하며 진정한 에코 히어로가 될 수 있는지 시험해 보세요.</p>`,
+          activities: `<h2>🎌 쿠라시키 비칸 지구에서의 체험:</h2>
+                      <ul>
+                        <li>전통적인 흰 벽의 거리를 산책해 보세요.</li>
+                        <li>인력거를 타고 마을의 문화와 자연의 소중함을 배워보세요.</li>
+                        <li>아름다운 운하를 바라보며 지역 과자를 즐겨보세요.</li>
+                      </ul>`,
+          mission: `<strong>🌱 마지막 미션:</strong> 쿠라시키 비칸 지구에서 당신의 “용기의 마음”을 보여주는 사진이나 영상을 찍으세요.
+                    SNS에 <code>#MomotarouEcoHero</code> 와 <code>#KurashikiBikanSpirit</code> 해시태그를 달아 올리고,
+                    아래 버튼을 눌러 마지막 스탬프를 받아보세요!`,
+          buttonText: "🌟 미션 완료 & 마지막 스탬프 받기",
+          stampMessage: "🎉 축하합니다! 쿠라시키 비칸 지구에서 마지막 스탬프를 받았습니다!",
+          stampSuccess: "🌟 당신은 공식적으로 모모타로 에코 히어로가 되었습니다!",
+          closing: `<h2>🏆 당신의 여정이 완료되었습니다!</h2>
+                    <p>에코 히어로로서의 모험을 마치고, 아름다운 자연과 역사를 지닌 쿠라시키 비칸 지구에 도착했습니다.</p>
+                    <p>📸 해시태그 <code>#MomotarouEcoHero</code> 를 사용하여 환경 보호 메시지를 계속 전파하세요!</p>
+                    <p>🍑 복숭아의 정신은 항상 당신과 함께할 것입니다. 전설과 그린 액션의 땅, 오카야마에서의 모험에 참여해 주셔서 감사합니다.</p>`,
+          complete_journey: "모험 완료하기"
+        },
+        fr: {
+          title: "Aventure Écologique de Momotaro - Quartier Historique de Kurashiki Bikan",
+          intro: `<h2>Quartier Historique de Kurashiki Bikan</h2>
+                  <p>Magnifique ! Ressentez le charme du quartier historique de Kurashiki Bikan tout en montrant le courage de Momotaro.
+                    Explorez les rues traditionnelles et les beaux canaux pour voir si vous pouvez devenir un véritable héros écologique.</p>`,
+          activities: `<h2>🎌 Expériences dans le Quartier de Kurashiki Bikan :</h2>
+                      <ul>
+                        <li>Promenez-vous dans les rues traditionnelles aux murs blancs.</li>
+                        <li>Faites un tour en pousse-pousse pour découvrir la culture locale et l’importance de la nature.</li>
+                        <li>Dégustez des douceurs locales tout en admirant le magnifique canal.</li>
+                      </ul>`,
+          mission: `<strong>🌱 Mission Finale :</strong> Dans le quartier de Kurashiki Bikan, prenez des photos ou vidéos montrant votre “cœur courageux”.
+                    Publiez-les sur les réseaux sociaux avec les hashtags <code>#MomotarouEcoHero</code> et <code>#KurashikiBikanSpirit</code>,
+                    puis cliquez sur le bouton ci-dessous pour recevoir votre dernier tampon !`,
+          buttonText: "🌟 Mission Terminée & Recevoir le Dernier Tampon",
+          stampMessage: "🎉 Félicitations ! Vous avez reçu le dernier tampon du Quartier Historique de Kurashiki Bikan !",
+          stampSuccess: "🌟 Vous êtes officiellement devenu un Héros Écologique Momotaro !",
+          closing: `<h2>🏆 Votre aventure est terminée !</h2>
+                    <p>Vous avez terminé votre aventure de héros écologique et atteint le magnifique quartier de Kurashiki Bikan, riche en nature et en histoire.</p>
+                    <p>📸 Continuez à partager votre message pour la protection de l’environnement avec le hashtag <code>#MomotarouEcoHero</code> !</p>
+                    <p>🍑 L’esprit de la pêche sera toujours avec vous. Merci d’avoir participé à cette aventure à Okayama — la terre des légendes et de l’action verte.</p>`,
+          complete_journey: "Terminer l’Aventure"
+        }
+      };
 
-      zh: {
-        title: "桃太郎生态冒险 – 仓敷美观地区",
-        intro: `<h2>仓敷美观地区</h2>
-                <p>太棒了！感受仓敷美观地区的魅力，展现桃太郎的勇气。
-                  探索传统街道和美丽的运河，看看你是否能成为真正的生态英雄。</p>`,
-        activities: `<h2>🎌 仓敷美观地区的体验：</h2>
-                    <ul>
-                      <li>漫步在传统的白墙街道上。</li>
-                      <li>乘坐人力车，了解小镇的文化与自然的重要性。</li>
-                      <li>一边欣赏美丽的运河，一边品尝当地的点心。</li>
-                    </ul>`,
-        mission: `<strong>🌱 最终任务：</strong> 在仓敷美观地区拍摄能展现你“勇气之心”的照片或视频。
-                  在社交媒体上发布并添加标签 <code>#MomotarouEcoHero</code> 和 <code>#KurashikiBikanSpirit</code>，
-                  然后点击下方按钮领取最后的印章！`,
-        buttonText: "🌟 任务完成 & 领取最后的印章",
-        stampMessage: "🎉 恭喜！你已从仓敷美观地区获得最后的印章！",
-        stampSuccess: "🌟 你已正式成为桃太郎生态英雄！",
-        closing: `<h2>🏆 你的冒险已经完成！</h2>
-                  <p>你完成了生态英雄的冒险，来到了拥有美丽自然与历史的仓敷美观地区。</p>
-                  <p>📸 继续使用标签 <code>#MomotarouEcoHero</code> 来传播环保的信息吧！</p>
-                  <p>🍑 桃子的精神将永远与你同在。感谢你参与冈山——这片传奇与绿色行动之地的冒险。</p>`,
-        complete_journey: "完成冒险"
-      },
-      ko: {
-        title: "모모타로 에코 어드벤처 – 쿠라시키 비칸 지구",
-        intro: `<h2>쿠라시키 비칸 지구</h2>
-                <p>멋져요! 쿠라시키 비칸 지구의 매력을 느끼며 모모타로의 용기를 보여주세요.
-                  전통적인 거리와 아름다운 운하를 탐험하며 진정한 에코 히어로가 될 수 있는지 시험해 보세요.</p>`,
-        activities: `<h2>🎌 쿠라시키 비칸 지구에서의 체험:</h2>
-                    <ul>
-                      <li>전통적인 흰 벽의 거리를 산책해 보세요.</li>
-                      <li>인력거를 타고 마을의 문화와 자연의 소중함을 배워보세요.</li>
-                      <li>아름다운 운하를 바라보며 지역 과자를 즐겨보세요.</li>
-                    </ul>`,
-        mission: `<strong>🌱 마지막 미션:</strong> 쿠라시키 비칸 지구에서 당신의 “용기의 마음”을 보여주는 사진이나 영상을 찍으세요.
-                  SNS에 <code>#MomotarouEcoHero</code> 와 <code>#KurashikiBikanSpirit</code> 해시태그를 달아 올리고,
-                  아래 버튼을 눌러 마지막 스탬프를 받아보세요!`,
-        buttonText: "🌟 미션 완료 & 마지막 스탬프 받기",
-        stampMessage: "🎉 축하합니다! 쿠라시키 비칸 지구에서 마지막 스탬프를 받았습니다!",
-        stampSuccess: "🌟 당신은 공식적으로 모모타로 에코 히어로가 되었습니다!",
-        closing: `<h2>🏆 당신의 여정이 완료되었습니다!</h2>
-                  <p>에코 히어로로서의 모험을 마치고, 아름다운 자연과 역사를 지닌 쿠라시키 비칸 지구에 도착했습니다.</p>
-                  <p>📸 해시태그 <code>#MomotarouEcoHero</code> 를 사용하여 환경 보호 메시지를 계속 전파하세요!</p>
-                  <p>🍑 복숭아의 정신은 항상 당신과 함께할 것입니다. 전설과 그린 액션의 땅, 오카야마에서의 모험에 참여해 주셔서 감사합니다.</p>`,
-        complete_journey: "모험 완료하기"
-      },
-      fr: {
-        title: "Aventure Écologique de Momotaro – Quartier Historique de Kurashiki Bikan",
-        intro: `<h2>Quartier Historique de Kurashiki Bikan</h2>
-                <p>Magnifique ! Ressentez le charme du quartier historique de Kurashiki Bikan tout en montrant le courage de Momotaro.
-                  Explorez les rues traditionnelles et les beaux canaux pour voir si vous pouvez devenir un véritable héros écologique.</p>`,
-        activities: `<h2>🎌 Expériences dans le Quartier de Kurashiki Bikan :</h2>
-                    <ul>
-                      <li>Promenez-vous dans les rues traditionnelles aux murs blancs.</li>
-                      <li>Faites un tour en pousse-pousse pour découvrir la culture locale et l’importance de la nature.</li>
-                      <li>Dégustez des douceurs locales tout en admirant le magnifique canal.</li>
-                    </ul>`,
-        mission: `<strong>🌱 Mission Finale :</strong> Dans le quartier de Kurashiki Bikan, prenez des photos ou vidéos montrant votre “cœur courageux”.
-                  Publiez-les sur les réseaux sociaux avec les hashtags <code>#MomotarouEcoHero</code> et <code>#KurashikiBikanSpirit</code>,
-                  puis cliquez sur le bouton ci-dessous pour recevoir votre dernier tampon !`,
-        buttonText: "🌟 Mission Terminée & Recevoir le Dernier Tampon",
-        stampMessage: "🎉 Félicitations ! Vous avez reçu le dernier tampon du Quartier Historique de Kurashiki Bikan !",
-        stampSuccess: "🌟 Vous êtes officiellement devenu un Héros Écologique Momotaro !",
-        closing: `<h2>🏆 Votre aventure est terminée !</h2>
-                  <p>Vous avez terminé votre aventure de héros écologique et atteint le magnifique quartier de Kurashiki Bikan, riche en nature et en histoire.</p>
-                  <p>📸 Continuez à partager votre message pour la protection de l’environnement avec le hashtag <code>#MomotarouEcoHero</code> !</p>
-                  <p>🍑 L’esprit de la pêche sera toujours avec vous. Merci d’avoir participé à cette aventure à Okayama — la terre des légendes et de l’action verte.</p>`,
-        complete_journey: "Terminer l’Aventure"
+      function setLang(lang) {
+        currentLang = lang;
+        document.getElementById("title").innerText = content[lang].title;
+        document.getElementById("intro").innerHTML = content[lang].intro;
+        document.getElementById("activities").innerHTML = content[lang].activities;
+        document.getElementById("mission").innerHTML = content[lang].mission;
+        document.getElementById("missionBtn").innerText = content[lang].buttonText;
+        document.getElementById("stampMessage").innerText = "";
+        document.getElementById("stampImage").innerHTML = "";
+        document.getElementById("closing").innerHTML = content[lang].closing;
+        document.getElementById("complete_journey").innerText = content[lang].complete_journey;
       }
-    };
 
-    function setLang(lang) {
-      currentLang = lang;
-      document.getElementById("title").innerText = content[lang].title;
-      document.getElementById("intro").innerHTML = content[lang].intro;
-      document.getElementById("activities").innerHTML = content[lang].activities;
-      document.getElementById("mission").innerHTML = content[lang].mission;
-      document.getElementById("missionBtn").innerText = content[lang].buttonText;
-      document.getElementById("stampMessage").innerText = "";
-      document.getElementById("stampImage").innerHTML = "";
-      document.getElementById("closing").innerHTML = content[lang].closing;
-      document.getElementById("complete_journey").innerText = content[lang].complete_journey;
-    }
+      function confirmMission() {
+        document.getElementById("stampMessage").innerText = content[currentLang].stampMessage;
+        document.getElementById("stampImage").innerHTML = `
+          <div style="position: relative; z-index: 10; pointer-events: none;">
+            <img src="https://img2.lancers.jp/proposal/13267190/509/b5b7f20e44df1c1ba67e92b52a339e39855d3008451e1d8f3a45cbd3bea2f921/18798291_300_0.jpg?20190515090200" alt="stamp"
+                style="max-width:200px; max-height:200px; box-shadow:0 0 8px rgba(0,0,0,0.3); margin-top:0.5em;">
+            <p style="font-weight:bold; margin-top:0.5rem;">${content[currentLang].stampSuccess}</p>
+          </div>`;
+      }
 
-    function confirmMission() {
-      document.getElementById("stampMessage").innerText = content[currentLang].stampMessage;
-      document.getElementById("stampImage").innerHTML = `
-        <div style="position: relative; z-index: 10; pointer-events: none;">
-          <img src="https://img2.lancers.jp/proposal/13267190/509/b5b7f20e44df1c1ba67e92b52a339e39855d3008451e1d8f3a45cbd3bea2f921/18798291_300_0.jpg?20190515090200" alt="stamp"
-              style="max-width:200px; max-height:200px; box-shadow:0 0 8px rgba(0,0,0,0.3); margin-top:0.5em;">
-          <p style="font-weight:bold; margin-top:0.5rem;">${content[currentLang].stampSuccess}</p>
-        </div>`;
-    }
-
-    // Tải trang với ngôn ngữ mặc định là tiếng Việt
-    setLang('ja');
-  </script>
-</body>
+      setLang('ja');
+    </script>
+  </body>
 </html>

@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>桃太郎エコアドベンチャー – 後楽園</title>
+  <title>桃太郎エコアドベンチャー - 後楽園</title>
   <link rel="stylesheet" href="../css/y.hakathon.css" />
 </head>
+
 <body>
   <header>
-    <h1 id="title">桃太郎エコアドベンチャー – 後楽園</h1>
+    <h1 id="title">桃太郎エコアドベンチャー - 後楽園</h1>
   </header>
 
   <div class="lang-switch">
@@ -24,22 +25,19 @@
     <section id="intro"></section>
     <section id="activities" class="activities"></section>
     <section id="mission" class="mission"></section>
-
     <div class="image-box">
-        <img src="../img/h.jpg" alt="korakuen-adventure">
-        <img src="../img/hoianhsang2.jpg" alt="korakuen-adventure">
-        <img src="../img/cakorakuen.jpg" alt="korakuen-adventure">
-        <img src="../img/korakuen-lehoiden.jpg" alt="korakuen-adventure">
-        <img src="../img/korakuen-adventure5.jpg" alt="korakuen-adventure">
-        <img src="../img/korakuen-hoa.jpeg" alt="korakuen-adventure">
-      </div>
-
+      <img src="../img/h.jpg" alt="korakuen-adventure">
+      <img src="../img/hoianhsang2.jpg" alt="korakuen-adventure">
+      <img src="../img/cakorakuen.jpg" alt="korakuen-adventure">
+      <img src="../img/korakuen-lehoiden.jpg" alt="korakuen-adventure">
+      <img src="../img/korakuen-adventure5.jpg" alt="korakuen-adventure">
+      <img src="../img/korakuen-hoa.jpeg" alt="korakuen-adventure">
+    </div>
     <div class="confirm-box">
       <button class="mission-btn" id="missionBtn" onclick="confirmMission()">🌟 ミッション完了 & スタンプを受け取る</button>
       <p id="stampMessage" class="stamp-message"></p>
       <div id="stampImage" style="margin-top:1rem;"></div>
     </div>
-
     <section id="closing" class="closing"></section>
     <a href="../index.html" id="complete_journey">冒険を終了する</a>
   </main>
@@ -50,10 +48,9 @@
 
   <script>
     let currentLang = 'ja';
-
     const content = {
       vi: {
-        title: "Cuộc Phiêu Lưu Sinh Thái Momotarou – Vườn Korakuen",
+        title: "Cuộc Phiêu Lưu Sinh Thái Momotarou - Vườn Korakuen",
         intro: `<h2>🌸 Khởi đầu hành trình tại Vườn Korakuen</h2>
                 <p>Chào mừng đến Vườn Korakuen, một trong Ba Đại Danh Viên của Nhật Bản! Đây là nơi bạn bắt đầu hành trình hóa thân thành Momotarou. Hãy dạo bước trong khu vườn thanh bình, cảm nhận vẻ đẹp bốn mùa và chuẩn bị cho một chuyến phiêu lưu sinh thái đầy ý nghĩa.</p>`,
         activities: `<h2>🎌 Hoạt động tại Vườn Korakuen</h2>
@@ -74,7 +71,7 @@
         next_journey: "Hành trình tiếp theo"
       },
       ja: {
-        title: "桃太郎エコアドベンチャー – 後楽園",
+        title: "桃太郎エコアドベンチャー - 後楽園",
         intro: `<h2>🌸 後楽園から旅を始めよう</h2>
                 <p>日本三名園の一つ、後楽園へようこそ！ここが桃太郎になる冒険の始まりです。静かな庭園を散策し、四季の美しさを感じながら、意義深いエコアドベンチャーに備えましょう。</p>`,
         activities: `<h2>🎌 後楽園での体験</h2>
@@ -95,7 +92,7 @@
         next_journey: "次の冒険へ"
       },
       en: {
-        title: "Momotarou Eco Adventure – Korakuen Garden",
+        title: "Momotarou Eco Adventure - Korakuen Garden",
         intro: `<h2>🌸 Begin Your Journey at Korakuen Garden</h2>
                 <p>Welcome to Korakuen Garden, one of the Three Great Gardens of Japan! This is where you begin your quest as Momotarou. Stroll through the serene garden, feel the beauty of the four seasons, and prepare for a meaningful eco-adventure.</p>`,
         activities: `<h2>🎌 Activities at Korakuen Garden</h2>
@@ -116,7 +113,7 @@
         next_journey: "Next Journey"
       },
       zh: {
-        title: "桃太郎生态冒险 – 后乐园",
+        title: "桃太郎生态冒险 - 后乐园",
         intro: `<h2>🌸 从后乐园开始你的旅程</h2>
                 <p>欢迎来到日本三大名园之一的后乐园！这里是你化身桃太郎冒险的起点。漫步于宁静的庭园，感受四季之美，为一场有意义的生态冒险做好准备。</p>`,
         activities: `<h2>🎌 在后乐园的活动</h2>
@@ -137,7 +134,7 @@
         next_journey: "下一段旅程"
       },
       ko: {
-        title: "모모타로 생태 어드벤처 – 고라쿠엔",
+        title: "모모타로 생태 어드벤처 - 고라쿠엔",
         intro: `<h2>🌸 고라쿠엔에서 여정을 시작하세요</h2>
                 <p>일본 3대 정원 중 하나인 고라쿠엔에 오신 것을 환영합니다! 이곳에서 모모타로가 되는 당신의 모험이 시작됩니다. 고요한 정원을 거닐며 사계절의 아름다움을 느끼고 의미 있는 생태 모험을 준비하세요.</p>`,
         activities: `<h2>🎌 고라쿠엔에서의 활동</h2>
@@ -158,7 +155,7 @@
         next_journey: "다음 여정"
       },
       fr: {
-        title: "Aventure Écologique Momotarou – Jardin Korakuen",
+        title: "Aventure Écologique Momotarou - Jardin Korakuen",
         intro: `<h2>🌸 Commencez votre aventure au Jardin Korakuen</h2>
                 <p>Bienvenue au Jardin Korakuen, l'un des Trois Grands Jardins du Japon ! C'est ici que vous commencez votre quête en tant que Momotarou. Promenez-vous dans le jardin serein, ressentez la beauté des quatre saisons et préparez-vous pour une éco-aventure pleine de sens.</p>`,
         activities: `<h2>🎌 Activités au Jardin Korakuen</h2>
