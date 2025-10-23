@@ -1,128 +1,115 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>岡山エコツーリズム</title>
-    <link rel="stylesheet" href="../css/bmoi.hakkathon.css">
-    <link rel="stylesheet" href="../css/test.css">
-</head>
-<body>
- 
-  <header class="sticky-header">
-  <div class="nav-container">
-    <a class="logo" href="../index.html">岡山エコツーリズム</a>
-    <nav class="nav-links">
-      <a href="#introduce" data-key="nav_intro">紹介</a>
-      <a href="#events" data-key="nav_events">イベント</a>
-      <a href="#guide" data-key="nav_guide">案内</a>
-      <a href="#special" data-key="nav_special">特別</a>
-    </nav>
-  </div>
-</header>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>岡山エコツーリズム</title>
+      <link rel="stylesheet" href="../css/bmoi.hakkathon.css">
+      <link rel="stylesheet" href="../css/test.css">
+  </head>
 
-<div class="hero-banner">
+  <body>
+    <header class="sticky-header">
+    <div class="nav-container">
+      <a class="logo" href="../index.html">岡山エコツーリズム</a>
+      <nav class="nav-links">
+        <a href="#introduce" data-key="nav_intro">紹介</a>
+        <a href="#events" data-key="nav_events">イベント</a>
+        <a href="#guide" data-key="nav_guide">案内</a>
+        <a href="#special" data-key="nav_special">特別</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero-banner">
     <p data-key="hero_text">日本三名園の美しさを発見</p>
-</div>
-
-<div class="lang-switch">
+  </div>
+  <div class="lang-switch">
     <button onclick="setLang('vi')">🇻🇳 Tiếng Việt</button>
     <button onclick="setLang('ja')">🇯🇵 日本語</button>
     <button onclick="setLang('en')">🇬🇧 English</button>
     <button onclick="setLang('zh')">🇨🇳 中文</button>
     <button onclick="setLang('ko')">🇰🇷 한국어</button>
     <button onclick="setLang('fr')">🇫🇷 Français</button>
-</div>
+  </div>
 
-<div class="layout">
-  <main class="main-content">
-    <section id="introduce">
-      <h2 data-key="intro_title">紹介</h2>
-      <p data-key="intro_p">岡山市の後楽園は、日本三名園の一つとして広く知られています。1687年に岡山藩主・池田綱政によって造営されたこの庭園は、歩むごとに異なる景色を楽しめる回遊式庭園の典型的な例です。池、小川、築山、茶室、広大な芝生などの要素が調和し、春の桜から秋の紅葉まで、四季折々の美しさを見せてくれます。隣接する岡山城と共に、後楽園は歴史と自然が交わる静かで優雅な空間を訪問者に提供します。 </p>
-      <img src="../img/korakuen.webp" alt="korakuen">
-    </section>
-    
-    <section id="Seasons">
-      <h2 data-key="seasons_title">四季の風景</h2>
-      <p data-key="seasons_p">後楽園は、一年を通して季節ごとに異なる美しさを見せます。春には桜や梅が咲き誇り、色彩豊かな景色が広がります。夏には緑の芝生と広大な蓮池が涼やかな雰囲気をもたらします。秋には紅葉が鮮やかな赤や黄色に染まり、庭園全体が黄金色に輝きます。冬には雪が静かに降り積もり、静寂で幻想的な雰囲気を醸し出します。四季の移ろいが織りなすこれらの風景こそ、後楽園の最大の魅力です。</p>
-      <div class="card-container">
-        <div class="card"><img src="../img/mankai.jpg" alt="Xuân"><h3 data-key="season_spring">春</h3></div>
-        <div class="card"><img src="../img/summer.jpg" alt="Hạ"><h3 data-key="season_summer">夏</h3></div>
-        <div class="card"><img src="../img/autumn.jpg" alt="Thu"><h3 data-key="season_autumn">秋</h3></div>
-        <div class="card"><img src="../img/winter.jpg" alt="Đông"><h3 data-key="season_winter">冬</h3></div>
-      </div>
-    </section>
+  <div class="layout">
+    <main class="main-content">
+      <section id="introduce">
+        <h2 data-key="intro_title">紹介</h2>
+        <p data-key="intro_p">岡山市の後楽園は、日本三名園の一つとして広く知られています。1687年に岡山藩主・池田綱政によって造営されたこの庭園は、歩むごとに異なる景色を楽しめる回遊式庭園の典型的な例です。池、小川、築山、茶室、広大な芝生などの要素が調和し、春の桜から秋の紅葉まで、四季折々の美しさを見せてくれます。隣接する岡山城と共に、後楽園は歴史と自然が交わる静かで優雅な空間を訪問者に提供します。 </p>
+        <img src="../img/korakuen.webp" alt="korakuen">
+      </section>
+      <section id="Seasons">
+        <h2 data-key="seasons_title">四季の風景</h2>
+        <p data-key="seasons_p">後楽園は、一年を通して季節ごとに異なる美しさを見せます。春には桜や梅が咲き誇り、色彩豊かな景色が広がります。夏には緑の芝生と広大な蓮池が涼やかな雰囲気をもたらします。秋には紅葉が鮮やかな赤や黄色に染まり、庭園全体が黄金色に輝きます。冬には雪が静かに降り積もり、静寂で幻想的な雰囲気を醸し出します。四季の移ろいが織りなすこれらの風景こそ、後楽園の最大の魅力です。</p>
+        <div class="card-container">
+          <div class="card"><img src="../img/mankai.jpg" alt="Xuân"><h3 data-key="season_spring">春</h3></div>
+          <div class="card"><img src="../img/summer.jpg" alt="Hạ"><h3 data-key="season_summer">夏</h3></div>
+          <div class="card"><img src="../img/autumn.jpg" alt="Thu"><h3 data-key="season_autumn">秋</h3></div>
+          <div class="card"><img src="../img/winter.jpg" alt="Đông"><h3 data-key="season_winter">冬</h3></div>
+        </div>
+      </section>
+      <section id="events">
+        <h2 data-key="events_title">年間イベント</h2>
+        <div class="event1">
+          <h3 data-key="event_spring_title">春季</h3>
+          <p data-key="event_spring_p"><b>お花見（3月下旬～4月上旬）：</b><br>200本以上の桜が庭園を彩り、多くの花見客で賑わいます。<br><b>野点：</b><br>咲き誇る花々の中で、日本の伝統的なお茶を楽しむことができます。</p>
+          <img src="../img/mankai.jpg" alt="Hoa anh dao">
+        </div>
+        <div class="event2">
+          <h3 data-key="event_summer_title">夏季</h3>
+          <p data-key="event_summer_p"><b>ホタル祭り（6月上旬）：</b><br>庭園の小川沿いで何千ものホタルが舞う姿を鑑賞できます。<br><b>夜間特別開園（8月）：</b><br>庭園が美しくライトアップされ、光と音楽が幻想的な空間を創り出します。</p>
+          <img src="../img/hoianhsang.jpg" alt="lehoianhsang">
+        </div>
+        <div class="event3">
+          <h3 data-key="event_autumn_title">秋季</h3>
+          <p data-key="event_autumn_p"><b>紅葉祭り（11月）：</b><br>園内のモミジやイチョウが色鮮やかに紅葉し、伝統芸能の披露も行われます。<br><b>秋の夜間特別開園</b><br>再び特別な照明で飾られ、夜の紅葉の美しさを際立たせます。</p>
+          <img src="../img/images1.jpg" alt="lehoianhsang">
+        </div>
+        <div class="event4">
+          <h3 data-key="event_winter_title">冬季</h3>
+          <p data-key="event_winter_p"><b>新年祭（1月1日～3日）：</b><br>地元の人々や観光客が新年を祝いに訪れ、弓道や和太鼓の演奏、祝い酒の振る舞いなどの文化的な催しに参加します。<br><b>冬の伝統的な展示：</b><br>雪から植物を守るために竹の囲いが設置され、冬ならではの景観が作られます。</p>
+          <img src="../img/event-winter.jpg" alt="">
+        </div>
+        <p data-key="events_conclusion">これらのイベントは、四季の美しさを称えるだけでなく、訪問者に日本の文化を深く体験させてくれます。</p>
+      </section>
+      <section id="guide">
+        <h2 data-key="guide_title">ご利用案内</h2>
+        <p data-key="guide_address">住所：〒703-8257 岡山県岡山市北区後楽園1-5</p>
+        <p data-key="guide_hours_title">開園時間： </p>
+        <div class="table-wrap">
+          <table>
+            <caption data-key="table_caption">年間開園時間概要</caption>
+            <thead>
+              <tr>
+                <th data-key="th_period">期間</th>
+                <th data-key="th_open">開園</th>
+                <th data-key="th_close">閉園</th>
+                <th data-key="th_last_entry">入園締切</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>20/3 - 30/9</td><td>07:30</td><td>18:00</td><td>17:45</td></tr>
+              <tr><td>1/10 - 19/3</td><td>08:00</td><td>17:00</td><td>16:45</td></tr>
+              <tr><td><span class="chip" data-key="table_special_event">夜間特別開園</span></td><td>~18:00</td><td>~21:30</td><td>~21:00</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note" data-key="guide_note">※年中無休。イベント（例：「幻想庭園」）開催日は時間が変更される場合があります。</p>
+      </section>
+      <section id="special">
+        <h2 data-key="special_title">岡山城</h2>
+        <img src="../img/okayamacastle.webp" alt="Okayamacastle">
+        <p data-key="special_p">後楽園の静かな空間を散策した後、すぐ近くにある歴史的なシンボル、岡山城を訪れて旅を続けることができます。徒歩数分で、かつて江戸時代の権力の中心であったこの地の古い美しさと物語に浸ることができます。<br><b>岡山城</b>は、その特徴的な黒い壁から「烏城」とも呼ばれ、岡山市の歴史的な象徴の一つです。16世紀末に建てられ、城の建築は堅固な石垣と日本の伝統的な瓦屋根を組み合わせています。天守閣からは市街と旭川の全景を一望できます。城内には、鎧や武器、地域の歴史的な遺物が多数展示されており、訪問者に魅力的な体験を提供します。</p>
+      </section>
+    </main>
+  </div>
 
-    <section id="events">
-      <h2 data-key="events_title">年間イベント</h2>
-      <div class="event1">
-        <h3 data-key="event_spring_title">春季</h3>
-        <p data-key="event_spring_p"><b>お花見（3月下旬～4月上旬）：</b><br>200本以上の桜が庭園を彩り、多くの花見客で賑わいます。<br><b>野点：</b><br>咲き誇る花々の中で、日本の伝統的なお茶を楽しむことができます。</p>
-         <img src="../img/mankai.jpg" alt="Hoa anh dao">
-    </div>
-      <div class="event2">
-        <h3 data-key="event_summer_title">夏季</h3>
-        <p data-key="event_summer_p"><b>ホタル祭り（6月上旬）：</b><br>庭園の小川沿いで何千ものホタルが舞う姿を鑑賞できます。<br><b>夜間特別開園（8月）：</b><br>庭園が美しくライトアップされ、光と音楽が幻想的な空間を創り出します。</p>
-        <img src="../img/hoianhsang.jpg" alt="lehoianhsang">
-    </div>
-      <div class="event3">
-        <h3 data-key="event_autumn_title">秋季</h3>
-        <p data-key="event_autumn_p"><b>紅葉祭り（11月）：</b><br>園内のモミジやイチョウが色鮮やかに紅葉し、伝統芸能の披露も行われます。<br><b>秋の夜間特別開園</b><br>再び特別な照明で飾られ、夜の紅葉の美しさを際立たせます。</p>
-        <img src="../img/images1.jpg" alt="lehoianhsang">
-    </div>
-      <div class="event4">
-        <h3 data-key="event_winter_title">冬季</h3>
-        <p data-key="event_winter_p"><b>新年祭（1月1日～3日）：</b><br>地元の人々や観光客が新年を祝いに訪れ、弓道や和太鼓の演奏、祝い酒の振る舞いなどの文化的な催しに参加します。<br><b>冬の伝統的な展示：</b><br>雪から植物を守るために竹の囲いが設置され、冬ならではの景観が作られます。</p>
-        <img src="../img/event-winter.jpg" alt="">
-    </div>
-      <p data-key="events_conclusion">これらのイベントは、四季の美しさを称えるだけでなく、訪問者に日本の文化を深く体験させてくれます。</p>
-    </section>
-
-    <section id="guide">
-      <h2 data-key="guide_title">ご利用案内</h2>
-      <p data-key="guide_address">住所：〒703-8257 岡山県岡山市北区後楽園1-5</p>
-      <p data-key="guide_hours_title">開園時間： </p>
-      <div class="table-wrap">
-        <table>
-          <caption data-key="table_caption">年間開園時間概要</caption>
-          <thead>
-            <tr>
-              <th data-key="th_period">期間</th>
-              <th data-key="th_open">開園</th>
-              <th data-key="th_close">閉園</th>
-              <th data-key="th_last_entry">入園締切</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>20/3 – 30/9</td><td>07:30</td><td>18:00</td><td>17:45</td></tr>
-            <tr><td>1/10 – 19/3</td><td>08:00</td><td>17:00</td><td>16:45</td></tr>
-            <tr><td><span class="chip" data-key="table_special_event">夜間特別開園</span></td><td>~18:00</td><td>~21:30</td><td>~21:00</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="note" data-key="guide_note">※年中無休。イベント（例：「幻想庭園」）開催日は時間が変更される場合があります。</p>
-    </section>
-
-    <section id="special">
-      <h2 data-key="special_title">岡山城</h2>
-       <img src="../img/okayamacastle.webp" alt="Okayamacastle">
-      <p data-key="special_p">後楽園の静かな空間を散策した後、すぐ近くにある歴史的なシンボル、岡山城を訪れて旅を続けることができます。徒歩数分で、かつて江戸時代の権力の中心であったこの地の古い美しさと物語に浸ることができます。<br><b>岡山城</b>は、その特徴的な黒い壁から「烏城（うじょう）」とも呼ばれ、岡山市の歴史的な象徴の一つです。16世紀末に建てられ、城の建築は堅固な石垣と日本の伝統的な瓦屋根を組み合わせています。天守閣からは市街と旭川の全景を一望できます。城内には、鎧や武器、地域の歴史的な遺物が多数展示されており、訪問者に魅力的な体験を提供します。</p>
-    </section>
-  </main>
-
-  <!-- <aside class="sidebar">
-    <img src="../img/momotaro2.jpg" alt="momotaro">
-    <p data-key="sidebar_p">岡山は、温暖な気候、美しいビーチ、そして一年中の日差しで有名です。また、日本の伝説の英雄である桃太郎の故郷でもあり、彼は文化の象徴であり、地元の人々の誇りです。岡山でユニークなエコツーリズム体験、桃太郎の旅を探検して、素晴らしい驚きを見つけましょう。</p>
-    <a href="../web/korakuen-adventure.html" class="korakuen adventure" data-key="sidebar_link1">後楽園での旅</a>
-    <a href="../web/hackathon.html" class="okayamacastle adventure" data-key="sidebar_link2">岡山城での旅</a>
-    <a href="../web/kurashiki_stamp.html" class="#KurashikiBikanSpirit adventure" data-key="sidebar_link2">倉敷美観地区での旅</a>
-  </aside> -->
-</div>
-
-<footer>
+  <footer>
     <p data-key="footer_text">&copy; 2025 岡山エコツーリズムプロジェクト。</p>
-</footer>
+  </footer>
 
-<script src="../js/kouraku.js"></script>
-</body>
+  <script src="../js/kouraku.js"></script>
+  </body>
 </html>
